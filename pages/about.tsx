@@ -2,12 +2,12 @@ import { Box, Container, Flex, Heading, VStack, Text, Link, Stack, Center, Popov
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from "next/future/image";
-import mail from '../public/ico-mail.png';
-import fb from '../public/ico-fb.png';
-import ig from '../public/ico-ig.png';
-import tw from '../public/ico-tw.png';
-import fl from '../public/ico-fl.png';
-import tg from '../public/ico-tg.png';
+import mail from '../public/icons/ico-mail.png';
+import fb from '../public/icons/ico-fb.png';
+import ig from '../public/icons/ico-ig.png';
+import tw from '../public/icons/ico-tw.png';
+import fl from '../public/icons/ico-fl.png';
+import tg from '../public/icons/ico-tg.png';
 import { NavBar } from "../components/navbar";
 
 const About: NextPage = () => {
