@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/future/image';
 import boopHero from '../public/boop-hero.png';
-import twitterEmbed from './twitter_embed.html';
+import twitterEmbed from '../lib/twitter_embed.html';
 import NextLink from 'next/link';
 
 import clutchPic from '../public/board/clutch.jpg';
