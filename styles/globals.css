@@ -4,6 +4,10 @@
   box-shadow: 5px 5px var(--chakra-colors-red-500);
 }
 
+html {
+  background-color: #171923;
+}
+
 body {
   padding-bottom: 3rem;
 }

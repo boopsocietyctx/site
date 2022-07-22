@@ -24,7 +24,7 @@ const Home: NextPage = () => {
                     <NextLink href="/" passHref>
                         <Link textStyle="navMenuLink">Home</Link>
                     </NextLink>
-                    <NextLink href="/" passHref>
+                    <NextLink href="/#recurring-events" passHref>
                         <Link textStyle="navMenuLink">Events</Link>
                     </NextLink>
                     <NextLink href="/" passHref>
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                     alignItems="center"
                     justifyContent={{ md: 'flex-end', base: 'center' }}
                     gap="5vw"
-                    mr="5vw"
+                    mx="5vw"
                 >
                     <Box flexBasis="auto">
                         <Image src={boopHero} alt="Boop Society Hero Image" />
