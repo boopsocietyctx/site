@@ -10,7 +10,7 @@ import fl from '../public/ico-fl.png';
 import tg from '../public/ico-tg.png';
 import { NavBar } from "../components/navbar";
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
     return (
         <div>
             <Head>
@@ -64,4 +64,4 @@ const Home: NextPage = () => {
     );
 };
 
-export default Home;
+export default About;
