@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                         </Box>
                         <Box layerStyle="marqueEvent" alignSelf="center">
                             <Text textStyle="marqueHeader">Paws On 4th - Bar Night</Text>
-                            <Text textStyle="marqueDesc">OILCAN HARRY'S - 4TH SATURDAYS</Text>
+                            <Text textStyle="marqueDesc">OILCAN HARRY&apos;S - 4TH SATURDAYS</Text>
                         </Box>
                         <Box layerStyle="marqueEvent" alignSelf="flex-end">
                             <Text textStyle="marqueHeader">Educational Workshops/Moshes</Text>
