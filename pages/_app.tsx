@@ -11,6 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Boop Society of Central Texas</title>
         <meta name="description" content="Boop Society of Central Texas" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-32.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>
