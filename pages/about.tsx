@@ -2,6 +2,7 @@ import { Box, Container, Flex, Heading, VStack, Text, Link, Stack, Center } from
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import NextLink from 'next/link';
+import { NavBar } from "../components/navbar";
 
 const Home: NextPage = () => {
     return (
@@ -12,20 +13,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Container as="main" maxWidth="120ch">
-                <VStack bg="rgba(23, 25, 35, 0.8)" p="4" borderRadius="xl" float="right" position="sticky" top={10} right={0} alignItems="end">
-                    <NextLink href="/" passHref>
-                        <Link textStyle="navMenuLink">Home</Link>
-                    </NextLink>
-                    <NextLink href="/#recurring-events" passHref>
-                        <Link textStyle="navMenuLink">Events</Link>
-                    </NextLink>
-                    <NextLink href="/#board" passHref>
-                        <Link textStyle="navMenuLink">Board</Link>
-                    </NextLink>
-                    <NextLink href="/about" passHref>
-                        <Link textStyle="navMenuLink">About Us</Link>
-                    </NextLink>
-                </VStack>
+            <NavBar />
                 <Container maxW="90ch">
                 <Flex
                     flexDirection={{ md: 'row', base: 'column' }}
