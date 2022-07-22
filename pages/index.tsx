@@ -27,7 +27,7 @@ const Home: NextPage = () => {
                     <NextLink href="/#recurring-events" passHref>
                         <Link textStyle="navMenuLink">Events</Link>
                     </NextLink>
-                    <NextLink href="/" passHref>
+                    <NextLink href="/#board" passHref>
                         <Link textStyle="navMenuLink">Board</Link>
                     </NextLink>
                 </VStack>
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
                             <Text textStyle="marqueDesc">EVERY QUARTER</Text>
                         </Box>
                     </VStack>
-                    <Heading my="40" textAlign="center" textStyle="shoutHeading" fontSize="7xl">
+                    <Heading id="board" my="40" textAlign="center" textStyle="shoutHeading" fontSize="7xl">
                         Board Hoomans
                     </Heading>
                     <Stack 
