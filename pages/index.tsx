@@ -20,7 +20,6 @@ import {
   
   const Home: NextPage = () => {
     return (
-      <>
         <Container as="main" maxWidth="120ch">
           <NavBar />
           <Flex
@@ -120,6 +119,7 @@ import {
               </Box>
             </Stack>
             <Heading
+              id="updates"
               mt="40"
               mb="10"
               textAlign="center"
@@ -133,9 +133,6 @@ import {
             </Center>
           </Container>
         </Container>
-  
-        <footer></footer>
-      </>
     );
   };
   

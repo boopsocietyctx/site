@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, VStack, Text, Link, Stack, Center, PopoverAnchor } from '@chakra-ui/react';
+import { Container, Flex, Heading, Text, Center } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Image from "next/future/image";
 import mail from '../public/icons/ico-mail.png';
@@ -7,6 +7,7 @@ import ig from '../public/icons/ico-ig.png';
 import tw from '../public/icons/ico-tw.png';
 import fl from '../public/icons/ico-fl.png';
 import tg from '../public/icons/ico-tg.png';
+import mailchimpEmbed from "../lib/mail_embed.html";
 import { NavBar } from "../components/navbar";
 
 const About: NextPage = () => {
@@ -26,14 +27,17 @@ const About: NextPage = () => {
                     <Heading id="recurring-events" mb="10" textAlign="center" textStyle="shoutHeading" fontSize="7xl">
                         Mission
                     </Heading>
-                        <Text textAlign="center">
+                        <Text textAlign="center" mb="10">
                             We are a Texas nonprofit corporation empowering pet players around the central Texas region to come together by organizing, promoting, and assisting in social, educational, and community events.
                         </Text>
-                    <Heading id="recurring-events" mt="20" mb="10" textAlign="center" textStyle="shoutHeading" fontSize="7xl">
+                        <Center mb = "10">
+                            <div dangerouslySetInnerHTML={{ __html: mailchimpEmbed }}></div>
+                        </Center>
+                    <Heading id="recurring-events" mb="10" textAlign="center" textStyle="shoutHeading" fontSize="7xl">
                         Contact Us
                     </Heading>
                         {/* Do we want to add the phone, mailing address, and maybe some social media icons for links? */}
-                        <Text textAlign="center" mb="10">
+                        <Text textAlign="center" mb="20">
                             If you have pet play events in the central Texas area to share with us to promote, want to collaborate to organize, or need some assistance to put together, or you have some ideas for adding education and petplay experiences into the community, feel free to send us a message through e-mail or social media.
                         </Text>
                         <Flex
@@ -49,11 +53,8 @@ const About: NextPage = () => {
                                 <a href="https://www.fetlife.com/boopsocietyctx"><Image src={fl} alt="Boop Society Fetlife Page" /></a>
                                 <a href="https://t.me/boopsocietyctx"><Image src={tg} alt="Boop Society Telegram Channel" /></a>
                         </Flex> 
-
                 </Container>
             </Container>
-
-            <footer></footer>
         </div>
     );
 };
