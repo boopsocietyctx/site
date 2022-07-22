@@ -13,11 +13,6 @@ import { NavBar } from "../components/navbar";
 const About: NextPage = () => {
     return (
         <div>
-            <Head>
-                <title>About Us</title>
-                <meta name="description" content="Learn more about the Boop Society of Central Texas" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
             <Container as="main" maxWidth="120ch">
             <NavBar />
                 <Container maxW="90ch">

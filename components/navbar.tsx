@@ -24,9 +24,6 @@ export function NavBar() {
       </NextLink>
       <NextLink href="/about" passHref>
         <Link textStyle="navMenuLink">About Us</Link>
-      </NextLink>      
-      <NextLink href="/about" passHref>
-        <Link textStyle="navMenuLink">Calendar</Link>
       </NextLink>
     </VStack>
   );
