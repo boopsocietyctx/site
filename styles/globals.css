@@ -1,3 +1,9 @@
-.twitter-timeline {
+.twitter-timeline-rendered {
   border-radius: 6px;
+  border: 2px solid white !important;
+  box-shadow: 5px 5px var(--chakra-colors-red-500);
+}
+
+body {
+  padding-bottom: 3rem;
 }
