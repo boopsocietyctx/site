@@ -1,5 +1,4 @@
 import { VStack, Link } from "@chakra-ui/react";
-import NextLink from "next/link";
 
 export function NavBar() {
   return (
@@ -13,24 +12,24 @@ export function NavBar() {
       right={0}
       alignItems="end"
     >
-      <NextLink href="/" passHref>
-        <Link textStyle="navMenuLink">Home</Link>
-      </NextLink>
-      <NextLink href="/#recurring-events" passHref>
-        <Link textStyle="navMenuLink">Events</Link>
-      </NextLink>
-      <NextLink href="/#board" passHref>
-        <Link textStyle="navMenuLink">Board</Link>
-      </NextLink>
-      <NextLink href="/#updates" passHref>
-        <Link textStyle="navMenuLink">Updates</Link>
-      </NextLink>
-      <NextLink href="/about" passHref>
-        <Link textStyle="navMenuLink">About Us</Link>
-      </NextLink>
-      <NextLink href="/calendar" passHref>
-        <Link textStyle="navMenuLink">Calendar</Link>
-      </NextLink>
+      <Link href="/" textStyle="navMenuLink">
+        Home
+      </Link>
+      <Link href="/#recurring-events" textStyle="navMenuLink">
+        Events
+      </Link>
+      <Link href="/#board" textStyle="navMenuLink">
+        Board
+      </Link>
+      <Link href="/#updates" textStyle="navMenuLink">
+        Updates
+      </Link>
+      <Link href="/about" textStyle="navMenuLink">
+        About Us
+      </Link>
+      <Link href="/calendar" textStyle="navMenuLink">
+        Calendar
+      </Link>
     </VStack>
   );
 }
