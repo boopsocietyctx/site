@@ -1,6 +1,5 @@
 import { Box, Container, Flex, Heading, VStack, Text, Link, Stack, Center, PopoverAnchor } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from "next/future/image";
 import mail from '../public/icons/ico-mail.png';
 import fb from '../public/icons/ico-fb.png';
