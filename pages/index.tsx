@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     <>
       <div className="flex md:flex-row flex-col h-[calc(100vh-8rem)] md:h-[calc(100vh-3rem)] items-center justify-center md:justify-end gap-[5vw] px-[5vw] w-full">
         <div className="basis-auto">
-          <Image src={boopHero} alt="Boop Society Hero Image" priority />
+          <Image src={boopHero} sizes="120ch" alt="Boop Society Hero Image" priority />
         </div>
         <div className="basis-[min-content]">
           <h1 className="text-6xl text-center md:text-left font-bold">
