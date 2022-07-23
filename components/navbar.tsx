@@ -1,35 +1,36 @@
-import { VStack, Link } from "@chakra-ui/react";
+import type { PropsWithChildren } from "react";
+
+function NavLink({ href, children }: PropsWithChildren<{ href: string}>) {
+  return (
+    <a href={href} className="uppercase font-serif text-2xl block text-right">
+      {children}
+    </a>
+  )
+}
 
 export function NavBar() {
   return (
-    <VStack
-      bg="rgba(23, 25, 35, 0.8)"
-      p="4"
-      borderRadius="xl"
-      float="right"
-      position="sticky"
-      top={10}
-      right={0}
-      alignItems="end"
+    <nav
+      className="flex flex-auto md:flex-col flex-row flex-wrap p-4 rounded-xl sticky top-10 right-0 justify-center items-end bg-background/50 gap-2 md:float-right md:mb-[-1000px] min-h-[5rem] md:h-auto"
     >
-      <Link href="/" textStyle="navMenuLink">
+      <NavLink href="/">
         Home
-      </Link>
-      <Link href="/#recurring-events" textStyle="navMenuLink">
+      </NavLink>
+      <NavLink href="/#recurring-events">
         Events
-      </Link>
-      <Link href="/#board" textStyle="navMenuLink">
+      </NavLink>
+      <NavLink href="/#board">
         Board
-      </Link>
-      <Link href="/#updates" textStyle="navMenuLink">
+      </NavLink>
+      <NavLink href="/#updates">
         Updates
-      </Link>
-      <Link href="/about" textStyle="navMenuLink">
+      </NavLink>
+      <NavLink href="/about">
         About Us
-      </Link>
-      <Link href="/calendar" textStyle="navMenuLink">
+      </NavLink>
+      <NavLink href="/calendar">
         Calendar
-      </Link>
-    </VStack>
+      </NavLink>
+    </nav>
   );
 }

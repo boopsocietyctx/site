@@ -1,23 +1,16 @@
-import { Container, Heading, Center } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import calendarEmbed from "../lib/cal_embed.html";
 
 const Home: NextPage = () => {
   return (
-    <Container maxW="90ch">
-      <Heading
-        mt="10"
-        mb="10"
-        textAlign="center"
-        textStyle="shoutHeading"
-        fontSize="7xl"
+    <main className="container max-w-long-prose">
+      <h2
+        className="mx-10 text-center"
       >
         Events for This Month
-      </Heading>
-      <Center>
+      </h2>
         <div dangerouslySetInnerHTML={{ __html: calendarEmbed }}></div>
-      </Center>
-    </Container>
+    </main>
   );
 };
 

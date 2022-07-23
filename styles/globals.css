@@ -1,13 +1,30 @@
-.twitter-timeline-rendered {
-  border-radius: 6px;
-  border: 2px solid white !important;
-  box-shadow: 5px 5px var(--chakra-colors-red-500);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer twitter {
+  .twitter-timeline-rendered {
+    border-radius: 6px;
+    border: 2px solid white !important;
+    box-shadow: 5px 5px theme('colors.red.500');
+  }
 }
 
-html {
-  background-color: #171923;
-}
+@layer base {
+  html {
+    @apply bg-background min-w-min;
+  }
 
-body {
-  padding-bottom: 3rem;
+  body {
+    @apply p-12;
+  }
+  
+  h1,h2 {
+    @apply font-serif;
+  }
+
+  h2 {
+    @apply mb-10 font-serif uppercase text-7xl text-center text-red-500 font-bold;
+    text-shadow: 3px 3px black, 4px 4px rgba(255, 255, 255, 0.5);
+  }
 }
