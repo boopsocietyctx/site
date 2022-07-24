@@ -6,7 +6,7 @@
   .twitter-timeline-rendered {
     border-radius: 6px;
     border: 2px solid white !important;
-    box-shadow: 5px 5px theme('colors.red.500');
+    box-shadow: 5px 5px theme("colors.red.500");
   }
 }
 
@@ -18,8 +18,9 @@
   body {
     @apply p-12;
   }
-  
-  h1,h2 {
+
+  h1,
+  h2 {
     @apply font-serif;
   }
 
@@ -27,4 +28,43 @@
     @apply mb-10 font-serif uppercase text-7xl text-center text-red-500 font-bold;
     text-shadow: 3px 3px black, 4px 4px rgba(255, 255, 255, 0.5);
   }
+}
+
+@layer components {
+  .link {
+    @apply text-blue-300 hover:text-blue-400;
+  }
+}
+
+#atcb-bgoverlay {
+  height: calc(100vh + 100px);
+  @apply box-border backdrop-blur bg-slate-50/20 inset-x-0 top-0 flex min-w-full min-h-full overflow-y-auto fixed z-[120] pt-7 pb-32 px-4;
+}
+
+.atcb-modal {
+  @apply block m-auto max-w-xl relative rounded shadow-lg z-[150];
+}
+
+.atcb-list {
+  @apply font-sans overflow-y-auto flex flex-col gap-2 cursor-pointer;
+}
+
+.atcb-list-item {
+  @apply flex place-items-center text-left rounded px-2 gap-1 bg-slate-800 focus:outline-none border-2 border-transparent focus-within:border-slate-400 hover:bg-slate-700 focus-within:bg-slate-700 transition-colors;
+}
+
+.atcb-icon {
+  @apply w-12 h-12 inline-block p-3;
+}
+
+.atcb-icon svg {
+  @apply w-auto h-full text-white fill-current;
+}
+
+.atcb-list-item-close svg {
+  @apply translate-x-1 translate-y-[0.25rem];
+}
+
+.atcb-list-item-close {
+  @apply bg-gray-600;
 }
