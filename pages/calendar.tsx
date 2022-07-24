@@ -149,7 +149,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <main className="container max-w-long-prose">
       <h2 className="mx-10 text-center">Events for This Month</h2>
       <div className="mb-4">
-        {events.map((event) => (
+        {events.map((event: any) => (
           <Event key={event.name} event={event} />
         ))}
       </div>
