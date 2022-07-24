@@ -1,12 +1,13 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { SSRProvider } from "react-aria";
 import Layout from "components/layout";
 
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <SSRProvider>
       <Head>
         <title>Boop Society of Central Texas</title>
         <meta name="description" content="Boop Society of Central Texas" />
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </SSRProvider>
   );
 }
 
