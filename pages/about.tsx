@@ -1,31 +1,43 @@
 import type { NextPage } from "next";
 import Image from "next/future/image";
-import { useForm } from "react-hook-form";
 import { useCallback } from "react";
-import mail from "../public/icons/ico-mail.png";
+import { useForm } from "react-hook-form";
 import fb from "../public/icons/ico-fb.png";
-import ig from "../public/icons/ico-ig.png";
-import tw from "../public/icons/ico-tw.png";
 import fl from "../public/icons/ico-fl.png";
+import ig from "../public/icons/ico-ig.png";
+import mail from "../public/icons/ico-mail.png";
 import tg from "../public/icons/ico-tg.png";
+import tw from "../public/icons/ico-tw.png";
 
-function FormError({ type, patternName }: { type?: string, patternName?: string } = {}) {
+function FormError({
+  type,
+  patternName,
+}: { type?: string; patternName?: string } = {}) {
   if (type == null) {
     return null;
   }
 
   if (type === "required") {
-    return <p className="text-red-400 mb-2">You must provide a value for this field.</p>;
+    return (
+      <p className="text-red-400 mb-2">
+        You must provide a value for this field.
+      </p>
+    );
   } else if (type === "pattern") {
-    return <p className="text-red-400 mb-2">Double check that you&apos;ve provided a valid {patternName}!</p>
+    return (
+      <p className="text-red-400 mb-2">
+        Double check that you&apos;ve provided a valid {patternName}!
+      </p>
+    );
   }
-  return null
+  return null;
 }
 
 function mailChimpPost(data: Record<string, any>) {
-  const form = document.createElement('form');
+  const form = document.createElement("form");
   form.method = "POST";
-  form.action = "https://boopsocietyctx.us14.list-manage.com/subscribe/post?u=a97d0c7694ecdf2b0dcc5d6ae&amp;id=eca10627f8";
+  form.action =
+    "https://boopsocietyctx.us14.list-manage.com/subscribe/post?u=a97d0c7694ecdf2b0dcc5d6ae&amp;id=eca10627f8";
   form.target = "_blank";
 
   for (const [key, value] of Object.entries(data)) {
@@ -33,7 +45,7 @@ function mailChimpPost(data: Record<string, any>) {
     field.type = "hidden";
     field.name = key;
     field.value = value;
-    form.appendChild(field)
+    form.appendChild(field);
   }
 
   document.body.appendChild(form);
@@ -65,8 +77,13 @@ const SubscribeForm = () => {
         </p>
         <br />
         <div className="grid grid-cols-1 gap-4 container max-w-sm bg-slate-800 rounded px-8 pt-6 pb-8 mg-4 text-white shadow-md">
-          <label className={`font-bold text-slate-300 ${errors.PNAME ? 'text-red-400' : ''}`} htmlFor="preferred-name">
-            Preferred Name {errors.PNAME ? '*' : ''}
+          <label
+            className={`font-bold text-slate-300 ${
+              errors.PNAME ? "text-red-400" : ""
+            }`}
+            htmlFor="preferred-name"
+          >
+            Preferred Name {errors.PNAME ? "*" : ""}
           </label>
           <input
             className="rounded invalid:border-red-600 invalid:focus:border-transparent invalid:ring-red-500 bg-slate-600"
@@ -76,29 +93,51 @@ const SubscribeForm = () => {
           />
           <FormError {...errors.PNAME} />
 
-          <label className={`font-bold text-slate-300 ${errors.PNAME ? 'text-red-400' : ''}`} htmlFor="phone">
-            Phone Number {errors.PNAME ? '*' : ''}
+          <label
+            className={`font-bold text-slate-300 ${
+              errors.PNAME ? "text-red-400" : ""
+            }`}
+            htmlFor="phone"
+          >
+            Phone Number {errors.PNAME ? "*" : ""}
           </label>
           <input
             className="rounded invalid:border-red-600 invalid:focus:border-transparent invalid:ring-red-500 bg-slate-600"
-            {...register("PHONE", { required: true, pattern: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i })}
+            {...register("PHONE", {
+              required: true,
+              pattern:
+                /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i,
+            })}
             type="tel"
             id="phone"
           />
           <FormError {...errors.PHONE} patternName="telephone number" />
 
-          <label className={`font-bold text-slate-300 ${errors.PNAME ? 'text-red-400' : ''}`} htmlFor="email">
-            Email Address {errors.PNAME ? '*' : ''}
+          <label
+            className={`font-bold text-slate-300 ${
+              errors.PNAME ? "text-red-400" : ""
+            }`}
+            htmlFor="email"
+          >
+            Email Address {errors.PNAME ? "*" : ""}
           </label>
           <input
             className="rounded invalid:border-red-600 invalid:focus:border-transparent invalid:ring-red-500 bg-slate-600"
-            {...register("EMAIL", { required: true, pattern: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/ })}
+            {...register("EMAIL", {
+              required: true,
+              pattern: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+            })}
             type="email"
             id="email"
           />
           <FormError {...errors.EMAIL} patternName="email" />
 
-          <input type="hidden" name="tags" value="7411054,7411058" readOnly></input>
+          <input
+            type="hidden"
+            name="tags"
+            value="7411054,7411058"
+            readOnly
+          ></input>
           <div
             style={{ position: "absolute", left: "-5000px" }}
             aria-hidden="true"
