@@ -100,7 +100,7 @@ function Event({ event }: { event: typeof eventSchema["_type"]["data"][0] }) {
   return (
     <div className="mb-10 flex flex-col gap-2 rounded bg-slate-800 px-6 py-4">
       <h3 className="mb-2 text-2xl font-bold text-red-400">{event.name}</h3>
-      <div className="item-center flex flex-row">
+      <div className="flex flex-row">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="mr-1 inline h-6 w-6"
@@ -118,7 +118,7 @@ function Event({ event }: { event: typeof eventSchema["_type"]["data"][0] }) {
         {formatDistance(start, new Date(), { addSuffix: true })} on{" "}
         {dateTimeFormat.formatRange(start, end)}
       </div>
-      <div className="item-center flex flex-row">
+      <div className="flex flex-row">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="mr-1 inline h-6 w-6"

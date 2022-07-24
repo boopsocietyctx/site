@@ -76,7 +76,7 @@ const SubscribeForm = () => {
           host!
         </p>
         <br />
-        <div className="mg-4 container grid max-w-sm grid-cols-1 gap-4 rounded bg-slate-800 px-8 pt-6 pb-8 text-white shadow-md">
+        <div className="container grid max-w-sm grid-cols-1 gap-4 rounded bg-slate-800 px-8 pt-6 pb-8 text-white shadow-md">
           <label
             className={`font-bold text-slate-300 ${
               errors.PNAME ? "text-red-400" : ""
