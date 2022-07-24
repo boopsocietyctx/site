@@ -36,11 +36,11 @@ export function NavBar() {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const { menuTriggerProps } = useMenuTrigger({}, state, triggerRef);
   const { buttonProps } = useButton(menuTriggerProps, triggerRef);
-  const matches = useMediaQuery("only screen and (min-width: 768px)") ?? true;
+  const matches = useMediaQuery("only screen and (max-width: 767px)");
 
   return (
     <nav className="flex flex-auto flex-col flex-wrap p-4 rounded-xl sticky top-10 right-0 justify-center items-end bg-background/50 gap-2 float-right mb-[-1000px]">
-      {!matches ? (
+      {matches ? (
         <button {...buttonProps} className="w-10 h-10" ref={triggerRef}>
           <span className="sr-only">Toggle Navigation Menu</span>
           {state.isOpen ? (
@@ -79,7 +79,7 @@ export function NavBar() {
         </button>
       ) : null}
       <motion.div className="flex flex-col items-end gap-2 md:gap-1" layout>
-        {state.isOpen || matches ? (
+        {state.isOpen || !matches ? (
           <>
             <NavLink key="home" href="/">
               Home
