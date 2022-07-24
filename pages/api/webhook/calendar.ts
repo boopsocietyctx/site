@@ -1,4 +1,4 @@
-import { NextApiHandler } from "next";
+import { NextApiHandler, PageConfig } from "next";
 import getRawBody from "raw-body";
 
 const handler: NextApiHandler = async (req, res) => {
@@ -49,6 +49,12 @@ const handler: NextApiHandler = async (req, res) => {
   } catch (err) {
     return res.status(500).send("Failed to revalidate calendar.");
   }
+};
+
+export const config: PageConfig = {
+  api: {
+    bodyParser: false,
+  },
 };
 
 export default handler;
