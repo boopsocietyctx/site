@@ -1,3 +1,4 @@
+import { subtle } from "node:crypto";
 import { NextApiHandler, PageConfig } from "next";
 import getRawBody from "raw-body";
 
@@ -23,7 +24,7 @@ const handler: NextApiHandler = async (req, res) => {
     name: "HMAC",
     hash: "SHA-256",
   } as const;
-  const key = await crypto.subtle.importKey(
+  const key = await subtle.importKey(
     "raw",
     encoder.encode(signingSecret),
     alg,
@@ -32,7 +33,7 @@ const handler: NextApiHandler = async (req, res) => {
   );
 
   try {
-    await crypto.subtle.verify(
+    await subtle.verify(
       alg,
       key,
       Buffer.from(signature),
