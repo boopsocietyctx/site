@@ -149,7 +149,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <main className="container max-w-long-prose">
       <h2 className="mx-10 text-center">Events for This Month</h2>
       <div className="mb-4">
-        {events.map((event: any) => (
+        {events.map((event) => (
           <Event key={event.name} event={event} />
         ))}
       </div>
@@ -202,7 +202,7 @@ export async function getStaticProps() {
     throw new Error("Failed to parse response from Ticket Tailor API.");
   }
 
-  const { data } = (result as any).data as typeof result["parsed"];
+  const { data } = result.data;
 
   const firstDay = startOfMonth(new Date());
   const lastDay = endOfDay(endOfMonth(new Date()));
