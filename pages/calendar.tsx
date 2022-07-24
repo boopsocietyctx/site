@@ -153,7 +153,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   events,
 }) => {
   return (
-    <main className="container max-w-long-prose">
+    <main className="container max-w-long-prose py-[5vh]">
       <h2 className="mx-10 text-center">Upcoming Events</h2>
       <div className="mb-4">
         {events.map((event) => (
@@ -203,7 +203,6 @@ export async function getStaticProps() {
   );
   query.searchParams.append("limit", "20");
 
-  console.log({ query });
   const res = await fetch(query, {
     headers: {
       authorization: `Basic ${Buffer.from(`${token}:`).toString("base64")}`,
@@ -226,6 +225,8 @@ export async function getStaticProps() {
     props: {
       events: liveEvents,
     },
+    /* Regenerate everyday */
+    revalidate: 24 * 60 * 60,
   };
 }
 
