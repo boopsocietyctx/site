@@ -19,13 +19,13 @@ function FormError({
 
   if (type === "required") {
     return (
-      <p className="text-red-400 mb-2">
+      <p className="mb-2 text-red-400">
         You must provide a value for this field.
       </p>
     );
   } else if (type === "pattern") {
     return (
-      <p className="text-red-400 mb-2">
+      <p className="mb-2 text-red-400">
         Double check that you&apos;ve provided a valid {patternName}!
       </p>
     );
@@ -70,13 +70,13 @@ const SubscribeForm = () => {
         method="post"
         target="_blank"
       >
-        <h2 className="font-serif text-3xl mb-2">Want to Volunteer?</h2>
+        <h2 className="mb-2 font-serif text-3xl">Want to Volunteer?</h2>
         <p>
           Sign up to recieve monthly volunteering opportunities for events we
           host!
         </p>
         <br />
-        <div className="grid grid-cols-1 gap-4 container max-w-sm bg-slate-800 rounded px-8 pt-6 pb-8 mg-4 text-white shadow-md">
+        <div className="mg-4 container grid max-w-sm grid-cols-1 gap-4 rounded bg-slate-800 px-8 pt-6 pb-8 text-white shadow-md">
           <label
             className={`font-bold text-slate-300 ${
               errors.PNAME ? "text-red-400" : ""
@@ -86,7 +86,7 @@ const SubscribeForm = () => {
             Preferred Name {errors.PNAME ? "*" : ""}
           </label>
           <input
-            className="rounded invalid:border-red-600 invalid:focus:border-transparent invalid:ring-red-500 bg-slate-600"
+            className="rounded bg-slate-600 invalid:border-red-600 invalid:ring-red-500 invalid:focus:border-transparent"
             {...register("PNAME", { required: true })}
             type="text"
             id="preferred-name"
@@ -102,7 +102,7 @@ const SubscribeForm = () => {
             Phone Number {errors.PNAME ? "*" : ""}
           </label>
           <input
-            className="rounded invalid:border-red-600 invalid:focus:border-transparent invalid:ring-red-500 bg-slate-600"
+            className="rounded bg-slate-600 invalid:border-red-600 invalid:ring-red-500 invalid:focus:border-transparent"
             {...register("PHONE", {
               required: true,
               pattern:
@@ -122,7 +122,7 @@ const SubscribeForm = () => {
             Email Address {errors.PNAME ? "*" : ""}
           </label>
           <input
-            className="rounded invalid:border-red-600 invalid:focus:border-transparent invalid:ring-red-500 bg-slate-600"
+            className="rounded bg-slate-600 invalid:border-red-600 invalid:ring-red-500 invalid:focus:border-transparent"
             {...register("EMAIL", {
               required: true,
               pattern: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
@@ -152,7 +152,7 @@ const SubscribeForm = () => {
           </div>
           <button
             type="submit"
-            className="rounded bg-slate-600 hover:bg-slate-700 font-bold mt-2 py-2 px-5 focus:outline-blue-500"
+            className="mt-2 rounded bg-slate-600 py-2 px-5 font-bold hover:bg-slate-700 focus:outline-blue-500"
           >
             Subscribe
           </button>
@@ -183,7 +183,7 @@ const About: NextPage = () => {
         experiences into the community, feel free to send us a message through
         e-mail or social media.
       </p>
-      <div className="flex flex-row flex-wrap items-center justify-center gap-4 mx-[2vw]">
+      <div className="mx-[2vw] flex flex-row flex-wrap items-center justify-center gap-4">
         <a href="mailto:boop@boopsocietyctx.org">
           <Image width={40} src={mail} alt="Boop Society E-mail" />
         </a>

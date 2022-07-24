@@ -20,7 +20,7 @@ const MarqueEvent = ({
     <div
       className={`bg-gray-300 p-4 text-black shadow-[20px_20px] shadow-secondary ${className}`}
     >
-      <h3 className="text-2xl font-bold mb-1">{header}</h3>
+      <h3 className="mb-1 text-2xl font-bold">{header}</h3>
       <div className="text-xl font-normal uppercase">{desc}</div>
     </div>
   );
@@ -29,7 +29,7 @@ const MarqueEvent = ({
 const Home: NextPage = () => {
   return (
     <>
-      <div className="flex md:flex-row flex-col h-[calc(100vh-8rem)] md:h-[calc(100vh-3rem)] items-center justify-center md:justify-end gap-[5vw] px-[5vw] w-full">
+      <div className="flex h-[calc(100vh-8rem)] w-full flex-col items-center justify-center gap-[5vw] px-[5vw] md:h-[calc(100vh-3rem)] md:flex-row md:justify-end">
         <div className="basis-auto">
           <Image
             src={boopHero}
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           />
         </div>
         <div className="basis-[min-content]">
-          <h1 className="text-6xl text-center md:text-left font-bold">
+          <h1 className="text-center text-6xl font-bold md:text-left">
             The Boop Society of Central Texas
           </h1>
         </div>
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <h2 id="recurring-events" className="mb-12">
           Our Recurring Events
         </h2>
-        <div className="flex flex-col gap-10 mb-20 px-4 items-center">
+        <div className="mb-20 flex flex-col items-center gap-10 px-4">
           <MarqueEvent
             header="Off The Leash - Park Munch/Social"
             desc="MUELLER PARK - 2ND SATURDAYS"
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
         <h2 id="board" className="my-20">
           Board Hoomans
         </h2>
-        <div className="flex flex-auto md:flex-row flex-col items-center space-x-6 my-20">
+        <div className="my-20 flex flex-auto flex-col items-center space-x-6 md:flex-row">
           {[
             ["Clutch", clutchPic],
             ["Polygon", polygonPic],
@@ -75,12 +75,12 @@ const Home: NextPage = () => {
           ].map(([name, pic]) => (
             <div
               key={name as string}
-              className="flex flex-col flex-1 sm:max-w-[60vw] text-center text-4xl"
+              className="flex flex-1 flex-col text-center text-4xl sm:max-w-[60vw]"
             >
               <Image
                 src={pic}
                 alt={`Board Member Pup ${name}`}
-                className="border-yellow-400 rounded-full border-8"
+                className="rounded-full border-8 border-yellow-400"
               ></Image>
               <div className="font-serif">{name as string}</div>
             </div>

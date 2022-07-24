@@ -24,7 +24,7 @@ function NavLink({
       ref={linkRef}
       href={href}
       tabIndex={tabIndex}
-      className="uppercase font-serif text-2xl block text-right hover:underline focus:underline"
+      className="block text-right font-serif text-2xl uppercase hover:underline focus:underline"
     >
       {children}
     </motion.a>
@@ -39,9 +39,9 @@ export function NavBar() {
   const matches = useMediaQuery("only screen and (max-width: 767px)");
 
   return (
-    <nav className="flex flex-auto flex-col flex-wrap p-4 rounded-xl sticky top-10 right-0 justify-center items-end bg-background/50 gap-2 float-right mb-[-1000px]">
+    <nav className="sticky top-10 right-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4">
       {matches ? (
-        <button {...buttonProps} className="w-10 h-10" ref={triggerRef}>
+        <button {...buttonProps} className="h-10 w-10" ref={triggerRef}>
           <span className="sr-only">Toggle Navigation Menu</span>
           {state.isOpen ? (
             <svg

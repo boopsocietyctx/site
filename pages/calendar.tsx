@@ -53,7 +53,7 @@ function Description({
     ? parser.parseWithInstructions(xss(description), isValidNode, instructions)
     : null;
   return (
-    <div className="border-l-2 py-4 my-2 bg-slate-700 border-slate-500 prose prose-slate dark:prose-invert pl-4">
+    <div className="prose prose-slate my-2 border-l-2 border-slate-500 bg-slate-700 py-4 pl-4 dark:prose-invert">
       {parsed}
     </div>
   );
@@ -98,12 +98,12 @@ function Event({ event }: { event: typeof eventSchema["_type"]["data"][0] }) {
   );
 
   return (
-    <div className="flex flex-col gap-2 mb-10 rounded bg-slate-800 px-6 py-4">
-      <h3 className="font-bold text-2xl text-red-400 mb-2">{event.name}</h3>
-      <div className="flex flex-row item-center">
+    <div className="mb-10 flex flex-col gap-2 rounded bg-slate-800 px-6 py-4">
+      <h3 className="mb-2 text-2xl font-bold text-red-400">{event.name}</h3>
+      <div className="item-center flex flex-row">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 mr-1 inline"
+          className="mr-1 inline h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -118,10 +118,10 @@ function Event({ event }: { event: typeof eventSchema["_type"]["data"][0] }) {
         {formatDistance(start, new Date(), { addSuffix: true })} on{" "}
         {dateTimeFormat.formatRange(start, end)}
       </div>
-      <div className="flex flex-row item-center">
+      <div className="item-center flex flex-row">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 mr-1 inline"
+          className="mr-1 inline h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -139,7 +139,7 @@ function Event({ event }: { event: typeof eventSchema["_type"]["data"][0] }) {
       </div>
       <Description description={event.description} />
       <button
-        className="w-40 rounded bg-slate-700 px-4 py-2 mt-2 hover:bg-slate-600 focus-within:bg-slate-600"
+        className="mt-2 w-40 rounded bg-slate-700 px-4 py-2 focus-within:bg-slate-600 hover:bg-slate-600"
         {...buttonProps}
         ref={addToCalendarButton}
       >
