@@ -30,6 +30,12 @@
   }
 }
 
+@layer components {
+  .link {
+    @apply text-blue-300 hover:text-blue-400;
+  }
+}
+
 #atcb-bgoverlay {
   height: calc(100vh + 100px);
   @apply box-border backdrop-blur bg-slate-50/20 inset-x-0 top-0 flex min-w-full min-h-full overflow-y-auto fixed z-[120] pt-7 pb-32 px-4;

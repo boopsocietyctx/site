@@ -21,11 +21,10 @@ declare module "html-to-react" {
   }
 
   export class ProcessNodeDefinitions {
-    constructor(react: typeof React);
-
     processDefaultNode(
       node: JSX.Element,
-      childrenNodes: JSX.Element[]
+      childrenNodes: JSX.Element[],
+      index?: React.Key
     ): JSX.Element;
   }
 }
