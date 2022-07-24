@@ -22,6 +22,24 @@ function FormError({ type, patternName }: { type?: string, patternName?: string 
   return null
 }
 
+function mailChimpPost(data: Record<string, any>) {
+  const form = document.createElement('form');
+  form.method = "POST";
+  form.action = "https://boopsocietyctx.us14.list-manage.com/subscribe/post?u=a97d0c7694ecdf2b0dcc5d6ae&amp;id=eca10627f8";
+  form.target = "_blank";
+
+  for (const [key, value] of Object.entries(data)) {
+    const field = document.createElement("input");
+    field.type = "hidden";
+    field.name = key;
+    field.value = value;
+    form.appendChild(field)
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+}
+
 const SubscribeForm = () => {
   const {
     register,
@@ -29,14 +47,14 @@ const SubscribeForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = useCallback((data: any) => console.log({ data }), []);
+  const onSubmit = useCallback(mailChimpPost, []);
 
   return (
     <div className="my-5">
       <form
         id="subscribe-form"
         onSubmit={handleSubmit(onSubmit)}
-        action="https://boopsocietyctx.us14.list-manage.com/subscribe/post?u=a97d0c7694ecdf2b0dcc5d6ae&amp;id=eca10627f8"
+        action=""
         method="post"
         target="_blank"
       >
@@ -80,7 +98,7 @@ const SubscribeForm = () => {
           />
           <FormError {...errors.EMAIL} patternName="email" />
 
-          <input type="hidden" name="tags" value="7411054,7411058"></input>
+          <input type="hidden" name="tags" value="7411054,7411058" readOnly></input>
           <div
             style={{ position: "absolute", left: "-5000px" }}
             aria-hidden="true"
@@ -89,6 +107,7 @@ const SubscribeForm = () => {
               type="text"
               name="b_a97d0c7694ecdf2b0dcc5d6ae_eca10627f8"
               tabIndex={-1}
+              readOnly
               value=""
             />
           </div>
