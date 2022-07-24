@@ -53,7 +53,7 @@ function Description({
     ? parser.parseWithInstructions(xss(description), isValidNode, instructions)
     : null;
   return (
-    <div className="border-l-2 px-2 py-4 my-2 bg-slate-700 border-slate-500">
+    <div className="border-l-2 py-4 my-2 bg-slate-700 border-slate-500 prose prose-slate dark:prose-invert pl-4">
       {parsed}
     </div>
   );
