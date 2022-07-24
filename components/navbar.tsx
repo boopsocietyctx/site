@@ -39,7 +39,7 @@ export function NavBar() {
   const matches = useMediaQuery("only screen and (max-width: 767px)");
 
   return (
-    <nav className="sticky top-10 right-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4">
+    <nav className="sticky top-0 right-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4 md:top-10">
       {matches ? (
         <button {...buttonProps} className="h-10 w-10" ref={triggerRef}>
           <span className="sr-only">Toggle Navigation Menu</span>

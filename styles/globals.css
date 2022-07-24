@@ -12,11 +12,11 @@
 
 @layer base {
   html {
-    @apply bg-background min-w-min;
+    @apply min-w-min bg-background;
   }
 
   body {
-    @apply p-12;
+    @apply px-6 py-4 md:p-12;
   }
 
   h1,
@@ -25,7 +25,7 @@
   }
 
   h2 {
-    @apply mb-10 font-serif uppercase text-7xl text-center text-red-500 font-bold;
+    @apply mb-10 text-center font-serif text-7xl font-bold uppercase text-red-500;
     text-shadow: 3px 3px black, 4px 4px rgba(255, 255, 255, 0.5);
   }
 }
@@ -38,27 +38,27 @@
 
 #atcb-bgoverlay {
   height: calc(100vh + 100px);
-  @apply box-border backdrop-blur bg-slate-50/20 inset-x-0 top-0 flex min-w-full min-h-full overflow-y-auto fixed z-[120] pt-7 pb-32 px-4;
+  @apply fixed inset-x-0 top-0 z-[120] box-border flex min-h-full min-w-full overflow-y-auto bg-slate-50/20 px-4 pt-7 pb-32 backdrop-blur;
 }
 
 .atcb-modal {
-  @apply block m-auto max-w-xl relative rounded shadow-lg z-[150];
+  @apply relative z-[150] m-auto block max-w-xl rounded shadow-lg;
 }
 
 .atcb-list {
-  @apply font-sans overflow-y-auto flex flex-col gap-2 cursor-pointer;
+  @apply flex cursor-pointer flex-col gap-2 overflow-y-auto font-sans;
 }
 
 .atcb-list-item {
-  @apply flex place-items-center text-left rounded px-2 gap-1 bg-slate-800 focus:outline-none border-2 border-transparent focus-within:border-slate-400 hover:bg-slate-700 focus-within:bg-slate-700 transition-colors;
+  @apply flex place-items-center gap-1 rounded border-2 border-transparent bg-slate-800 px-2 text-left transition-colors focus-within:border-slate-400 focus-within:bg-slate-700 hover:bg-slate-700 focus:outline-none;
 }
 
 .atcb-icon {
-  @apply w-12 h-12 inline-block p-3;
+  @apply inline-block h-12 w-12 p-3;
 }
 
 .atcb-icon svg {
-  @apply w-auto h-full text-white fill-current;
+  @apply h-full w-auto fill-current text-white;
 }
 
 .atcb-list-item-close svg {
