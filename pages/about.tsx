@@ -17,7 +17,7 @@ function FormError({ type, patternName }: { type?: string, patternName?: string 
   if (type === "required") {
     return <p className="text-red-400 mb-2">You must provide a value for this field.</p>;
   } else if (type === "pattern") {
-    return <p className="text-red-400 mb-2">Double check that you've provided a valid {patternName}!</p>
+    return <p className="text-red-400 mb-2">Double check that you&apos;ve provided a valid {patternName}!</p>
   }
   return null
 }
