@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const {
-  fontFamily
-} = require('tailwindcss/defaultTheme');
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -14,21 +12,19 @@ module.exports = {
     container: {
       center: true,
     },
-    fontFamily: {
-      serif: [`'Teko'`, ...fontFamily.serif]
-    },
     extend: {
+      fontFamily: {
+        serif: [`'Teko'`, ...fontFamily.serif],
+      },
       colors: {
-        background: '#171923',
-        secondary: '#004aad'
+        background: "#171923",
+        secondary: "#004aad",
       },
       maxWidth: {
-        'long-prose': '90ch',
-        container: '120ch'
-      }
+        "long-prose": "90ch",
+        container: "120ch",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms')
-  ],
-}
+  plugins: [require("@tailwindcss/forms")],
+};

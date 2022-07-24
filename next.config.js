@@ -2,24 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {    
-    formats: ['image/avif', 'image/webp'],
+  images: {
+    formats: ["image/avif", "image/webp"],
   },
   experimental: {
-    runtime: 'experimental-edge',
     images: { allowFutureImage: true },
   },
-  webpack: (
-    config
-  ) => {
-    config.module.rules.push(
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      }
-    );
-    return config
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.html$/i,
+      loader: "html-loader",
+    });
+    return config;
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
