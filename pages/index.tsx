@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           />
           <MarqueEvent
             header="Full Moon Howl"
-            desc="Barton Springs - Full Moon - 9:00 PM"
+            desc="Barton Springs Pool - Full Moon Night - 9:00 PM"
             className="justify-around"
           />
           <MarqueEvent
