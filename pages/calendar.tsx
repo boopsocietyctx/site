@@ -171,13 +171,19 @@ const eventDateSchema = z.object({
   unix: z.number(),
 });
 
+const stringyBool = z.preprocess(
+  (arg) => (arg === "true" ? true : false),
+  z.boolean()
+);
+
 const eventSchema = z.object({
   data: z.array(
     z.object({
       id: z.string(),
       name: z.string(),
       description: z.string().nullable(),
-      private: z.string(),
+      hidden: stringyBool,
+      private: stringyBool,
       status: z.string(),
       start: eventDateSchema,
       end: eventDateSchema,
@@ -218,7 +224,7 @@ export async function getStaticProps() {
 
   const { data } = result.data;
   const liveEvents = data.filter(
-    (event) => event.private === "false" && event.status === "published"
+    (event) => !event.hidden && event.status === "published"
   );
 
   return {
