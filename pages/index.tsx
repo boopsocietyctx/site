@@ -48,20 +48,26 @@ const Home: NextPage = () => {
         <h2 id="recurring-events" className="mb-12">
           Our Recurring Events
         </h2>
-        <div className="mb-20 flex flex-col items-center gap-10 px-4">
+        <div className="mb-20 flex flex-col gap-10 px-4">
           <MarqueEvent
             header="Off The Leash - Park Munch/Social"
-            desc="MUELLER PARK - 2ND SATURDAYS"
-            className="self-start"
+            desc="MUELLER PARK - 2ND SATURDAYS - 4:00 PM"
+            className="justify-around"
+          />
+          <MarqueEvent
+            header="Full Moon Howl"
+            desc="Barton Springs - Full Moon - 9:00 PM"
+            className="justify-around"
           />
           <MarqueEvent
             header="Paws On 4th - Bar Night"
-            desc="OILCAN HARRY'S - 4TH SATURDAYS"
+            desc="OILCAN HARRY'S - 4TH SATURDAYS - 9:30 PM"
+            className="justify-around"
           />
           <MarqueEvent
             header=">Educational Workshops/Moshes"
             desc="EVERY QUARTER"
-            className="self-end"
+            className="justify-around"
           />
         </div>
         <h2 id="board" className="my-20">
