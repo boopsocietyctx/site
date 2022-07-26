@@ -3,6 +3,10 @@ import { NextApiHandler, PageConfig } from "next";
 import getRawBody from "raw-body";
 
 const handler: NextApiHandler = async (req, res) => {
+  if (req.method !== "POST") {
+    return res.status(404);
+  }
+
   const signingSecret = process.env.TICKET_TAILOR_SIGNING_SECRET;
 
   if (!req.headers["tickettailor-webhook-signature"]) {
@@ -40,8 +44,10 @@ const handler: NextApiHandler = async (req, res) => {
       Buffer.from(`${timestamp}${rawBody.toString("utf-8")}`)
     );
   } catch (err) {
-    console.error("Failed to verify signature");
-    return res.status(401).json({ message: "Failed to verify signature." });
+    console.error("Failed to verify signature.", {
+      signature,
+      body: `${timestamp}${rawBody.toString("utf-8")}`,
+    });
   }
 
   try {
