@@ -1,11 +1,13 @@
 import type { PressEvent } from "@react-types/shared";
 import {
+  endOfDay,
   format,
   formatDistance,
   getTime,
   getUnixTime,
   startOfDay,
 } from "date-fns";
+import { addMonths } from "date-fns/esm";
 import { Parser, ProcessNodeDefinitions } from "html-to-react";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { PropsWithChildren, useCallback, useId, useMemo, useRef } from "react";
@@ -171,13 +173,19 @@ const eventDateSchema = z.object({
   unix: z.number(),
 });
 
+const stringyBool = z.preprocess(
+  (arg) => (arg === "true" ? true : false),
+  z.boolean()
+);
+
 const eventSchema = z.object({
   data: z.array(
     z.object({
       id: z.string(),
       name: z.string(),
       description: z.string().nullable(),
-      private: z.string(),
+      hidden: stringyBool,
+      private: stringyBool,
       status: z.string(),
       start: eventDateSchema,
       end: eventDateSchema,
@@ -198,8 +206,12 @@ export async function getStaticProps() {
 
   const query = new URL(`https://api.tickettailor.com/v1/events`);
   query.searchParams.append(
-    "start_at.gt",
+    "start_at.gte",
     `${getUnixTime(startOfDay(new Date()))}`
+  );
+  query.searchParams.append(
+    "end_at.lte",
+    `${getUnixTime(endOfDay(addMonths(new Date(), 2)))}`
   );
   query.searchParams.append("limit", "20");
 
@@ -218,7 +230,7 @@ export async function getStaticProps() {
 
   const { data } = result.data;
   const liveEvents = data.filter(
-    (event) => event.private === "false" && event.status === "published"
+    (event) => !event.hidden && event.status === "published"
   );
 
   return {
