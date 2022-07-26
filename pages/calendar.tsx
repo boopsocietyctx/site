@@ -1,6 +1,7 @@
 import type { PressEvent } from "@react-types/shared";
 import {
   addMonths,
+  compareAsc,
   endOfDay,
   format,
   formatDistance,
@@ -8,6 +9,7 @@ import {
   startOfDay,
 } from "date-fns";
 import { Parser, ProcessNodeDefinitions } from "html-to-react";
+import sortBy from "lodash/sortBy";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { PropsWithChildren, useCallback, useId, useMemo, useRef } from "react";
 import { useButton } from "react-aria";
@@ -230,6 +232,9 @@ export async function getStaticProps() {
   const { data } = result.data;
   const liveEvents = data.filter(
     (event) => !event.hidden && event.status === "published"
+  );
+  liveEvents.sort((e1, e2) =>
+    compareAsc(new Date(e1.start.iso), new Date(e2.end.iso))
   );
 
   return {
