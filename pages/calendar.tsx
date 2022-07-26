@@ -1,11 +1,13 @@
 import type { PressEvent } from "@react-types/shared";
 import {
+  endOfDay,
   format,
   formatDistance,
   getTime,
   getUnixTime,
   startOfDay,
 } from "date-fns";
+import { addMonths } from "date-fns/esm";
 import { Parser, ProcessNodeDefinitions } from "html-to-react";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { PropsWithChildren, useCallback, useId, useMemo, useRef } from "react";
@@ -204,8 +206,12 @@ export async function getStaticProps() {
 
   const query = new URL(`https://api.tickettailor.com/v1/events`);
   query.searchParams.append(
-    "start_at.gt",
+    "start_at.gte",
     `${getUnixTime(startOfDay(new Date()))}`
+  );
+  query.searchParams.append(
+    "end_at.lte",
+    `${getUnixTime(endOfDay(addMonths(new Date(), 2)))}`
   );
   query.searchParams.append("limit", "20");
 
