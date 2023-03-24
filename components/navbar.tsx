@@ -93,7 +93,7 @@ export function NavBar() {
               Schedule
             </NavLink>
             <NavLink key="updates" href="/#updates">
-              Feed
+              Social Feed
             </NavLink>
             <NavLink key="about-us" href="/about">
               About Us
