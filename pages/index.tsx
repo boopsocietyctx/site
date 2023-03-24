@@ -44,6 +44,7 @@ const Home: NextPage = () => {
           </h1>
         </div>
       </div>
+      <div className="container max-w-long-prose">
       <h2 id="board" className="my-20">
         Board Members
       </h2>
@@ -68,7 +69,6 @@ const Home: NextPage = () => {
           </div>
         ))}
       </div>
-      <div className="container max-w-long-prose">
         <h2 id="recurring-events" className="mb-12">
           Our Recurring Events
         </h2>
