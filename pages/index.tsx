@@ -38,20 +38,23 @@ const Home: NextPage = () => {
             priority
           />
         </div>
+        <div><br></br><br></br><br></br><br></br></div>
         <div className="basis-[min-content]">
           <h1 className="text-center text-6xl font-bold md:text-left">
             The Boop Society of Central Texas
           </h1>
         </div>
       </div>
+      <div><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br></div>
+      <div className="container max-w-long-prose">
       <h2 id="board" className="my-20">
         Board Members
       </h2>
       <div className="my-20 flex flex-auto flex-col items-center space-x-6 md:flex-row">
         {[
-          ["\n\n Marchosias", marchosiasPic],
-          ["\n\n Polygon", polygonPic],
-          ["\n\n Clay", clayPic],
+          ["Marchosias", marchosiasPic],
+          ["Polygon", polygonPic],
+          ["Clay", clayPic],
         ].map(([name, pic]) => (
           <div
             key={name as string}
@@ -63,12 +66,11 @@ const Home: NextPage = () => {
               className="rounded-full border-8 border-yellow-400"
             ></Image>
             <div className="font-serif">
-              <br></br> {name as string}{" "}
+              <br></br> {name as string}{" "} <br></br><br></br><br></br><br></br>
             </div>
           </div>
         ))}
       </div>
-      <div className="container max-w-long-prose">
         <h2 id="recurring-events" className="mb-12">
           Our Recurring Events
         </h2>
