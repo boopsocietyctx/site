@@ -96,7 +96,10 @@ const Home: NextPage = () => {
         </div>
         <h2 id="updates">Social Updates</h2>
         <div className="text-center">
-          <div dangerouslySetInnerHTML={{ __html: twitterEmbed }}></div>
+          <div
+            className="text-center"
+            dangerouslySetInnerHTML={{ __html: twitterEmbed }}
+          ></div>
         </div>
       </div>
     </>

@@ -32,12 +32,25 @@ const About: NextPage = () => {
       <h2 className="mb-10">Our Officers</h2>
       <p className="mb-10">
         President - Marchosias <br></br>
+        marchosias@boopsocietyctx.org <br></br>
+        <br></br>
         Vice President - Polygon <br></br>
+        polygon@boopsocietyctx.org <br></br>
+        <br></br>
         Secretary/Treasurer - Clay <br></br>
+        clay@boopsocietyctx.org <br></br>
+        <br></br>
         Event Coordinator - Fenrir <br></br>
+        events@boopsocietyctx.org <br></br>
+        <br></br>
         Volunteer Coordinator - Bun <br></br>
+        volunteer@boopsocietyctx.org <br></br>
+        <br></br>
         Inventory Manager - Kie <br></br>
+        equipment@boopsocietyctx.org<br></br>
+        <br></br>
         Webmaster - Lyell <br></br>
+        webmaster@boopsocietyctx.org <br></br>
       </p>
 
       <h2 className="mb-10 text-center">Contact Us</h2>
@@ -50,7 +63,7 @@ const About: NextPage = () => {
         e-mail or social media.
       </p>
       <div className="mx-[2vw] flex flex-row flex-wrap items-center justify-center gap-4">
-        <a href="mailto:boop@boopsocietyctx.org">
+        <a href="mailto:info@boopsocietyctx.org">
           <Image width={40} src={mail} alt="Boop Society E-mail" />
         </a>
         <a href="https://www.facebook.com/boopsocietyctx">
