@@ -47,6 +47,10 @@ const Home: NextPage = () => {
       <div><br></br></div>
       <div><br></br></div>
       <div><br></br></div>
+      <div><br></br></div>
+      <div><br></br></div>
+      <div><br></br></div>
+      <div><br></br></div>
       <div className="container max-w-long-prose">
       <h2 id="board" className="my-20">
         Board Members
