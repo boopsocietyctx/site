@@ -15,7 +15,8 @@ function NavLink({
   href,
   tabIndex,
   children,
-}: PropsWithChildren<{ href: string; tabIndex?: number }>) {
+  target,
+}: PropsWithChildren<{ href: string; tabIndex?: number; target?: string }>) {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const { linkProps } = useLink({}, linkRef);
   return (
@@ -24,6 +25,7 @@ function NavLink({
       ref={linkRef}
       href={href}
       tabIndex={tabIndex}
+      target={target}
       className="block text-right font-serif text-2xl uppercase hover:underline focus:underline"
     >
       {children}
@@ -96,7 +98,11 @@ export function NavBar() {
             <NavLink key="about-us" href="/about">
               About Us
             </NavLink>
-            <NavLink key="cal" href="https://buytickets.at/boopsocietyctx">
+            <NavLink
+              key="cal"
+              target="_blank"
+              href="https://buytickets.at/boopsocietyctx"
+            >
               Events
             </NavLink>
           </>
