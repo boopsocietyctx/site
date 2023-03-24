@@ -84,20 +84,20 @@ export function NavBar() {
             <NavLink key="home" href="/">
               Home
             </NavLink>
-            <NavLink key="events" href="/#recurring-events">
-              Events
-            </NavLink>
             <NavLink key="board" href="/#board">
               Board
             </NavLink>
+            <NavLink key="events" href="/#recurring-events">
+              Schedule
+            </NavLink>
             <NavLink key="updates" href="/#updates">
-              Updates
+              Feed
             </NavLink>
             <NavLink key="about-us" href="/about">
               About Us
             </NavLink>
-            <NavLink key="cal" href="/calendar">
-              Calendar
+            <NavLink key="cal" href="https://buytickets.at/boopsocietyctx">
+              Events
             </NavLink>
           </>
         ) : (

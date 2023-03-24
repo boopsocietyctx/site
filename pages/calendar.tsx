@@ -214,7 +214,7 @@ export async function getStaticProps() {
     "end_at.lte",
     `${getUnixTime(endOfDay(addMonths(new Date(), 2)))}`
   );
-  query.searchParams.append("limit", "20");
+  query.searchParams.append("limit", "10");
 
   const res = await fetch(query, {
     headers: {

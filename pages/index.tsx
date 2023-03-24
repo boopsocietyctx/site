@@ -2,9 +2,9 @@ import type { NextPage } from "next";
 import Image from "next/future/image";
 import twitterEmbed from "../lib/twitter_embed.html";
 
-import clutchPic from "../public/board/clutch.jpg";
+import clayPic from "../public/board/clay.jpg";
+import marchosiasPic from "../public/board/marchosias.jpg";
 import polygonPic from "../public/board/polygon.jpg";
-import sharpPic from "../public/board/sharp.jpg";
 import boopHero from "../public/boop-hero.png";
 
 const MarqueEvent = ({
@@ -44,6 +44,30 @@ const Home: NextPage = () => {
           </h1>
         </div>
       </div>
+      <h2 id="board" className="my-20">
+        Board Members
+      </h2>
+      <div className="my-20 flex flex-auto flex-col items-center space-x-6 md:flex-row">
+        {[
+          ["\n\n Marchosias", marchosiasPic],
+          ["\n\n Polygon", polygonPic],
+          ["\n\n Clay", clayPic],
+        ].map(([name, pic]) => (
+          <div
+            key={name as string}
+            className="flex flex-1 flex-col text-center text-4xl sm:max-w-[60vw]"
+          >
+            <Image
+              src={pic}
+              alt={`Board Member ${name}`}
+              className="rounded-full border-8 border-yellow-400"
+            ></Image>
+            <div className="font-serif">
+              <br></br> {name as string}{" "}
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="container max-w-long-prose">
         <h2 id="recurring-events" className="mb-12">
           Our Recurring Events
@@ -56,7 +80,7 @@ const Home: NextPage = () => {
           />
           <MarqueEvent
             header="Full Moon Howl"
-            desc="FULL MOON NIGHTS - BARTON SPRINGS POOL"
+            desc="BARTON SPRINGS POOL (Apr-Sep) - FULL MOON NIGHTS "
             className="justify-around"
           />
           <MarqueEvent
@@ -65,32 +89,10 @@ const Home: NextPage = () => {
             className="justify-around"
           />
           <MarqueEvent
-            header=">Educational Workshops/Moshes"
-            desc="HELD EVERY QUARTER"
+            header="Educational Workshops/Moshes"
+            desc="THROUGH LOCAL HOSTS - HELD EVERY QUARTER"
             className="justify-around"
           />
-        </div>
-        <h2 id="board" className="my-20">
-          Board Hoomans
-        </h2>
-        <div className="my-20 flex flex-auto flex-col items-center space-x-6 md:flex-row">
-          {[
-            ["Marchosias - President", ],
-            ["Polygon - VP", polygonPic],
-            ["Clay - Secretary/Treasurer",],
-          ].map(([name, pic]) => (
-            <div
-              key={name as string}
-              className="flex flex-1 flex-col text-center text-4xl sm:max-w-[60vw]"
-            >
-              <Image
-                src={pic}
-                alt={`Board Member Pup ${name}`}
-                className="rounded-full border-8 border-yellow-400"
-              ></Image>
-              <div className="font-serif">{name as string}</div>
-            </div>
-          ))}
         </div>
         <h2 id="updates">Social Updates</h2>
         <div className="text-center">
