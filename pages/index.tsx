@@ -51,12 +51,12 @@ const Home: NextPage = () => {
         <div className="mb-20 flex flex-col gap-10 px-4">
           <MarqueEvent
             header="Off The Leash - Park Munch/Social"
-            desc="MUELLER PARK - 2ND SATURDAYS - 4:00 PM"
+            desc="MUELLER PARK - 2ND SATURDAYS"
             className="justify-around"
           />
           <MarqueEvent
             header="Full Moon Howl"
-            desc="Barton Springs Pool - Full Moon Night - 9:00 PM"
+            desc="FULL MOON NIGHTS - BARTON SPRINGS POOL"
             className="justify-around"
           />
           <MarqueEvent
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
           />
           <MarqueEvent
             header=">Educational Workshops/Moshes"
-            desc="EVERY QUARTER"
+            desc="HELD EVERY QUARTER"
             className="justify-around"
           />
         </div>
@@ -75,9 +75,9 @@ const Home: NextPage = () => {
         </h2>
         <div className="my-20 flex flex-auto flex-col items-center space-x-6 md:flex-row">
           {[
-            ["Clutch", clutchPic],
-            ["Polygon", polygonPic],
-            ["Sharp", sharpPic],
+            ["Clutch - President", clutchPic],
+            ["Polygon - Vice President", polygonPic],
+            ["Clay - Secretary/Treasurer", sharpPic],
           ].map(([name, pic]) => (
             <div
               key={name as string}
