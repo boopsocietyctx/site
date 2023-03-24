@@ -75,9 +75,9 @@ const Home: NextPage = () => {
         </h2>
         <div className="my-20 flex flex-auto flex-col items-center space-x-6 md:flex-row">
           {[
-            ["Clutch - President", clutchPic],
-            ["Polygon - Vice President", polygonPic],
-            ["Clay - Secretary/Treasurer", sharpPic],
+            ["Marchosias - President", ],
+            ["Polygon - VP", polygonPic],
+            ["Clay - Secretary/Treasurer",],
           ].map(([name, pic]) => (
             <div
               key={name as string}
