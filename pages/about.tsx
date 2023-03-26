@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import Image from "next/future/image";
-import { useCallback } from "react";
-import { useForm } from "react-hook-form";
 import fb from "../public/icons/ico-fb.png";
 import fl from "../public/icons/ico-fl.png";
 import ig from "../public/icons/ico-ig.png";

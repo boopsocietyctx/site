@@ -1,7 +1,5 @@
-import MenuIcon from "@heroicons/react/outline/MenuIcon";
-import CloseIcon from "@heroicons/react/outline/XIcon";
 import { useMediaQuery } from "@react-hook/media-query";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { PropsWithChildren, useRef } from "react";
 import { useButton, useLink, useMenuTrigger } from "react-aria";
 import { useMenuTriggerState } from "react-stately";
