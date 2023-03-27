@@ -1,19 +1,19 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 
-import fb from "../assets/icons/ico-fb.png";
-import fl from "../assets/icons/ico-fl.png";
-import ig from "../assets/icons/ico-ig.png";
-import mail from "../assets/icons/ico-mail.png";
-import tg from "../assets/icons/ico-tg.png";
-import tw from "../assets/icons/ico-tw.png";
+import fb from "../images/icons/ico-fb.png";
+import fl from "../images/icons/ico-fl.png";
+import ig from "../images/icons/ico-ig.png";
+import mail from "../images/icons/ico-mail.png";
+import tg from "../images/icons/ico-tg.png";
+import tw from "../images/icons/ico-tw.png";
 ---
 
 <Layout>
-  <main class="container max-w-container py-[5vh] text-center">
+  <main class="container max-w-long-prose py-[5vh] text-center">
     <h2 class="mb-10">Mission</h2>
-    <p class="mb-10">
+    <p class="mb-10 text-justify">
       We are the Boop Society of Central Texas, a non-profit organization
       dedicated to aiding organizational support for local, social, and
       educational events in the Central Texas area. We host 3 monthly social
@@ -53,11 +53,11 @@ import tw from "../assets/icons/ico-tw.png";
       webmaster@boopsocietyctx.org <br />
     </p>
 
-    <h2 class="mb-10 text-center">Contact Us</h2>
+    <h2 class="mb-10">Contact Us</h2>
     {
       /* Do we want to add the phone, mailing address, and maybe some social media icons for links? */
     }
-    <p class="mb-20">
+    <p class="mb-20 text-left">
       If you have pet play events in the central Texas area to share with us to
       promote, want to collaborate to organize, or need some assistance to put
       together, or you have some ideas for adding education and petplay
@@ -68,13 +68,20 @@ import tw from "../assets/icons/ico-tw.png";
       class="mx-[2vw] flex flex-row flex-wrap items-center justify-center gap-4"
     >
       <a href="mailto:info@boopsocietyctx.org">
-        <Image width={40} height={40} src={mail} alt="Boop Society E-mail" />
+        <Image
+          width={40}
+          height={40}
+          src={mail}
+          format="webp"
+          alt="Boop Society E-mail"
+        />
       </a>
       <a href="https://www.facebook.com/boopsocietyctx">
         <Image
           width={40}
           height={40}
           src={fb}
+          format="webp"
           alt="Boop Society Facebook Page"
         />
       </a>
@@ -83,6 +90,7 @@ import tw from "../assets/icons/ico-tw.png";
           width={40}
           height={40}
           src={ig}
+          format="webp"
           alt="Boop Society Instagram Page"
         />
       </a>
@@ -91,6 +99,7 @@ import tw from "../assets/icons/ico-tw.png";
           width={40}
           height={40}
           src={tw}
+          format="webp"
           alt="Boop Society Twitter Page"
         />
       </a>
@@ -99,6 +108,7 @@ import tw from "../assets/icons/ico-tw.png";
           width={40}
           height={40}
           src={fl}
+          format="webp"
           alt="Boop Society Fetlife Page"
         />
       </a>
@@ -107,6 +117,7 @@ import tw from "../assets/icons/ico-tw.png";
           width={40}
           height={40}
           src={tg}
+          format="webp"
           alt="Boop Society Telegram Channel"
         />
       </a>

@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import MarqueEvent from "../components/MarqueEvent.astro";
 
-import clayPic from "../assets/board/clay.jpg";
-import marchosiasPic from "../assets/board/marchosias.jpg";
-import polygonPic from "../assets/board/polygon.jpg";
-import boopHero from "../assets/boop-hero.png";
+import clayPic from "../images/board/clay.jpg";
+import marchosiasPic from "../images/board/marchosias.jpg";
+import polygonPic from "../images/board/polygon.jpg";
+import boopHero from "../images/boop-hero.png";
 
 const boardImages = [
   {
@@ -31,10 +31,11 @@ const boardImages = [
     >
       <div class="basis-auto">
         <Image
-          src={boopHero.src}
-          width={boopHero.width}
-          height={boopHero.height}
-          sizes="120ch"
+          src={boopHero}
+          width={480}
+          height={480}
+          loading="eager"
+          format="webp"
           alt="Boop Society Hero Image"
         />
       </div>
@@ -53,10 +54,12 @@ const boardImages = [
           boardImages.map(({ name, image }) => (
             <div class="flex flex-1 flex-col text-center text-4xl sm:max-w-[60vw]">
               <Image
-                src={image.src}
-                width={image.width}
-                height={image.height}
+                src={image}
                 alt={`Board Member ${name}`}
+                format="webp"
+                loading="lazy"
+                width={300}
+                height={300}
                 class="rounded-full border-8 border-yellow-400"
               />
               <div class="my-5 font-serif">{name as string} </div>
