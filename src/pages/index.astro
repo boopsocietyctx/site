@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import MarqueEvent from "../components/MarqueEvent.astro";
+
+import clayPic from "../assets/board/clay.jpg";
+import marchosiasPic from "../assets/board/marchosias.jpg";
+import polygonPic from "../assets/board/polygon.jpg";
+import boopHero from "../assets/boop-hero.png";
+
+const boardImages = [
+  {
+    name: "Marchosias",
+    image: marchosiasPic,
+  },
+  {
+    name: "Polygon",
+    image: polygonPic,
+  },
+  {
+    name: "Clay",
+    image: clayPic,
+  },
+];
+---
+
+<Layout>
+  <main class="container max-w-container">
+    <div
+      class="flex h-[calc(100vh-8rem)] w-full flex-col items-center justify-center gap-[5vw] px-[5vw] md:h-[calc(100vh-3rem)] md:flex-row md:justify-end"
+    >
+      <div class="basis-auto">
+        <Image
+          src={boopHero.src}
+          width={boopHero.width}
+          height={boopHero.height}
+          sizes="120ch"
+          alt="Boop Society Hero Image"
+        />
+      </div>
+      <div class="basis-[min-content]">
+        <h1 class="text-center text-6xl font-bold md:text-left">
+          The Boop Society of Central Texas
+        </h1>
+      </div>
+    </div>
+    <div class="container max-w-long-prose">
+      <h2 id="board" class="my-20">Board Members</h2>
+      <div
+        class="my-20 flex flex-auto flex-col items-center gap-10 md:mb-40 md:flex-row md:gap-5"
+      >
+        {
+          boardImages.map(({ name, image }) => (
+            <div class="flex flex-1 flex-col text-center text-4xl sm:max-w-[60vw]">
+              <Image
+                src={image.src}
+                width={image.width}
+                height={image.height}
+                alt={`Board Member ${name}`}
+                class="rounded-full border-8 border-yellow-400"
+              />
+              <div class="my-5 font-serif">{name as string} </div>
+            </div>
+          ))
+        }
+      </div>
+      <h2 id="recurring-events" class="mb-12">Our Recurring Events</h2>
+      <div class="mb-20 flex flex-col gap-10 px-4">
+        <MarqueEvent
+          header="Off The Leash - Park Munch/Social"
+          desc="MUELLER PARK - 2ND SATURDAYS"
+          class="justify-around"
+        />
+        <MarqueEvent
+          header="Full Moon Howl"
+          desc="BARTON SPRINGS POOL (Apr-Sep) - FULL MOON NIGHTS "
+          class="justify-around"
+        />
+        <MarqueEvent
+          header="Paws On 4th - Bar Night"
+          desc="OILCAN HARRY'S - 4TH SATURDAYS - 9:30 PM"
+          class="justify-around"
+        />
+        <MarqueEvent
+          header="Educational Workshops/Moshes"
+          desc="THROUGH LOCAL HOSTS - HELD EVERY QUARTER"
+          class="justify-around"
+        />
+      </div>
+      <h2 id="updates">Social Updates</h2>
+      <div class="text-center">
+        <a
+          class="twitter-timeline"
+          data-lang="en"
+          data-theme="dark"
+          data-chrome="noheader nofooter noborders"
+          data-tweet-limit="5"
+          href="https://twitter.com/boopsocietyctx?ref_src=twsrc%5Etfw"></a>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+    </div>
+  </main>
+</Layout>

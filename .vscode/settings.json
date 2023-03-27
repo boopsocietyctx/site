@@ -3,5 +3,12 @@
     "*.css": "tailwindcss"
   },
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable"
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ]
 }

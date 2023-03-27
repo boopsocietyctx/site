@@ -1,13 +1,10 @@
-/** @type {import('tailwindcss').Config} */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-env commonjs */
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   darkMode: "class",
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./lib/**/*.html",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,astro,html}"],
   theme: {
     container: {
       center: true,

@@ -1,13 +1,21 @@
-import { useMediaQuery } from "@react-hook/media-query";
-import { motion } from "framer-motion";
 import { PropsWithChildren, useRef } from "react";
-import { useButton, useLink, useMenuTrigger } from "react-aria";
+import {
+  SSRProvider,
+  useButton,
+  useIsSSR,
+  useLink,
+  useMenuTrigger,
+} from "react-aria";
+import { useMediaQuery } from "react-responsive";
 import { useMenuTriggerState } from "react-stately";
 
-const variants = {
-  open: { opacity: 1, x: 0 },
-  closed: { opacity: 0, x: "-100%" },
-};
+export function NavRoot() {
+  return (
+    <SSRProvider>
+      <NavBar />
+    </SSRProvider>
+  );
+}
 
 function NavLink({
   href,
@@ -18,8 +26,8 @@ function NavLink({
   const linkRef = useRef<HTMLAnchorElement>(null);
   const { linkProps } = useLink({}, linkRef);
   return (
-    <motion.a
-      {...(linkProps as any)}
+    <a
+      {...linkProps}
       ref={linkRef}
       href={href}
       tabIndex={tabIndex}
@@ -27,20 +35,24 @@ function NavLink({
       className="block text-right font-serif text-2xl uppercase hover:underline focus:underline"
     >
       {children}
-    </motion.a>
+    </a>
   );
 }
 
-export function NavBar() {
+function NavBar() {
   const state = useMenuTriggerState({});
   const triggerRef = useRef<HTMLButtonElement>(null);
   const { menuTriggerProps } = useMenuTrigger({}, state, triggerRef);
   const { buttonProps } = useButton(menuTriggerProps, triggerRef);
-  const matches = useMediaQuery("only screen and (max-width: 767px)");
+  const isMobile = useMediaQuery({
+    maxWidth: 768,
+  });
+  const isSsr = useIsSSR();
+  const showMobile = isSsr || isMobile;
 
   return (
     <nav className="sticky top-0 right-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4 md:top-10">
-      {matches ? (
+      {showMobile ? (
         <button {...buttonProps} className="h-10 w-10" ref={triggerRef}>
           <span className="sr-only">Toggle Navigation Menu</span>
           {state.isOpen ? (
@@ -78,8 +90,8 @@ export function NavBar() {
           )}
         </button>
       ) : null}
-      <motion.div className="flex flex-col items-end gap-2 md:gap-1" layout>
-        {state.isOpen || !matches ? (
+      <div className="flex flex-col items-end gap-2 md:gap-1">
+        {state.isOpen || !isMobile ? (
           <>
             <NavLink key="home" href="/">
               Home
@@ -107,7 +119,7 @@ export function NavBar() {
         ) : (
           <></>
         )}
-      </motion.div>
+      </div>
     </nav>
   );
 }
