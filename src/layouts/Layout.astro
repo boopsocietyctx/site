@@ -15,8 +15,10 @@ import "../styles/base.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body class="dark:text-white">
-    <NavRoot client:load />
-    <slot />
-    <footer></footer>
+    <div class="container max-w-container">
+      <NavRoot client:load />
+      <slot />
+      <footer></footer>
+    </div>
   </body>
 </html>

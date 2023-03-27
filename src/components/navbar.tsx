@@ -53,7 +53,11 @@ function NavBar() {
   return (
     <nav className="sticky top-0 right-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4 md:top-10">
       {showMobile ? (
-        <button {...buttonProps} className="h-10 w-10" ref={triggerRef}>
+        <button
+          {...buttonProps}
+          className="h-10 w-10 md:hidden"
+          ref={triggerRef}
+        >
           <span className="sr-only">Toggle Navigation Menu</span>
           {state.isOpen ? (
             <svg
