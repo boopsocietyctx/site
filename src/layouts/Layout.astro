@@ -1,0 +1,22 @@
+---
+import "@fontsource/teko";
+import { NavRoot } from "../components/navbar";
+import "../styles/base.css";
+---
+
+<html lang="en" class="dark">
+  <head>
+    <title>Boop Society of Central Texas</title>
+    <meta name="description" content="Boop Society of Central Texas" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="dark:text-white">
+    <NavRoot client:load />
+    <slot />
+    <footer></footer>
+  </body>
+</html>
