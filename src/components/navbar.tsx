@@ -104,20 +104,20 @@ function NavBar() {
               Board
             </NavLink>
             <NavLink key="events" href="/#recurring-events">
-              Schedule
-            </NavLink>
-            <NavLink key="updates" href="/#updates">
-              Social Feed
-            </NavLink>
-            <NavLink key="about-us" href="/about">
-              About Us
+              Monthly Events
             </NavLink>
             <NavLink
               key="cal"
               target="_blank"
               href="https://buytickets.at/boopsocietyctx"
             >
-              Events
+              Event Calendar
+            </NavLink>
+            <NavLink key="updates" href="/#updates">
+              Social Feed
+            </NavLink>
+            <NavLink key="about-us" href="/about">
+              About Us
             </NavLink>
           </>
         ) : (
