@@ -1,47 +1,63 @@
-import MenuIcon from "@heroicons/react/outline/MenuIcon";
-import CloseIcon from "@heroicons/react/outline/XIcon";
-import { useMediaQuery } from "@react-hook/media-query";
-import { AnimatePresence, motion } from "framer-motion";
 import { PropsWithChildren, useRef } from "react";
-import { useButton, useLink, useMenuTrigger } from "react-aria";
+import {
+  SSRProvider,
+  useButton,
+  useIsSSR,
+  useLink,
+  useMenuTrigger,
+} from "react-aria";
+import { useMediaQuery } from "react-responsive";
 import { useMenuTriggerState } from "react-stately";
 
-const variants = {
-  open: { opacity: 1, x: 0 },
-  closed: { opacity: 0, x: "-100%" },
-};
+export function NavRoot() {
+  return (
+    <SSRProvider>
+      <NavBar />
+    </SSRProvider>
+  );
+}
 
 function NavLink({
   href,
   tabIndex,
   children,
-}: PropsWithChildren<{ href: string; tabIndex?: number }>) {
+  target,
+}: PropsWithChildren<{ href: string; tabIndex?: number; target?: string }>) {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const { linkProps } = useLink({}, linkRef);
   return (
-    <motion.a
-      {...(linkProps as any)}
+    <a
+      {...linkProps}
       ref={linkRef}
       href={href}
       tabIndex={tabIndex}
+      target={target}
       className="block text-right font-serif text-2xl uppercase hover:underline focus:underline"
     >
       {children}
-    </motion.a>
+    </a>
   );
 }
 
-export function NavBar() {
+function NavBar() {
   const state = useMenuTriggerState({});
   const triggerRef = useRef<HTMLButtonElement>(null);
   const { menuTriggerProps } = useMenuTrigger({}, state, triggerRef);
   const { buttonProps } = useButton(menuTriggerProps, triggerRef);
-  const matches = useMediaQuery("only screen and (max-width: 767px)");
+  const isMobile = useMediaQuery({
+    maxWidth: 768,
+  });
+  const isSsr = useIsSSR();
+  const showMobile = isSsr || isMobile;
 
   return (
     <nav className="sticky top-0 right-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4 md:top-10">
-      {matches ? (
-        <button {...buttonProps} className="h-10 w-10" ref={triggerRef}>
+      {showMobile ? (
+        <button
+          {...buttonProps}
+          className="h-10 w-10 md:hidden"
+          ref={triggerRef}
+        >
           <span className="sr-only">Toggle Navigation Menu</span>
           {state.isOpen ? (
             <svg
@@ -78,32 +94,36 @@ export function NavBar() {
           )}
         </button>
       ) : null}
-      <motion.div className="flex flex-col items-end gap-2 md:gap-1" layout>
-        {state.isOpen || !matches ? (
+      <div className="flex flex-col items-end gap-2 md:gap-1">
+        {state.isOpen || !isMobile ? (
           <>
             <NavLink key="home" href="/">
               Home
             </NavLink>
-            <NavLink key="events" href="/#recurring-events">
-              Events
-            </NavLink>
             <NavLink key="board" href="/#board">
               Board
             </NavLink>
+            <NavLink key="events" href="/#recurring-events">
+              Monthly Events
+            </NavLink>
+            <NavLink
+              key="cal"
+              target="_blank"
+              href="https://buytickets.at/boopsocietyctx"
+            >
+              Event Calendar
+            </NavLink>
             <NavLink key="updates" href="/#updates">
-              Updates
+              Social Feed
             </NavLink>
             <NavLink key="about-us" href="/about">
               About Us
-            </NavLink>
-            <NavLink key="cal" href="/calendar">
-              Calendar
             </NavLink>
           </>
         ) : (
           <></>
         )}
-      </motion.div>
+      </div>
     </nav>
   );
 }
