@@ -45,7 +45,7 @@ function NavBar() {
   const { menuTriggerProps } = useMenuTrigger({}, state, triggerRef);
   const { buttonProps } = useButton(menuTriggerProps, triggerRef);
   const isMobile = useMediaQuery({
-    maxWidth: 768,
+    maxWidth: 550,
   });
   const isSsr = useIsSSR();
   const showMobile = isSsr || isMobile;
@@ -55,7 +55,7 @@ function NavBar() {
       {showMobile ? (
         <button
           {...buttonProps}
-          className="h-10 w-10 md:hidden"
+          className="mt-10 h-10 w-10 md:hidden"
           ref={triggerRef}
         >
           <span className="sr-only">Toggle Navigation Menu</span>
@@ -97,7 +97,7 @@ function NavBar() {
       <div className="flex flex-col items-end gap-2 md:gap-1">
         {state.isOpen || !isMobile ? (
           <>
-            <NavLink key="home" href="/">
+            <NavLink key="home" href="/#main">
               Home
             </NavLink>
             <NavLink key="about-us" href="/#about">

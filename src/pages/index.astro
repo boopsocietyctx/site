@@ -33,7 +33,8 @@ const boardImages = [
 <Layout>
   <main class="container max-w-container">
     <div
-      class="flex h-[calc(100vh-8rem)] w-full flex-col items-center justify-center gap-[5vw] px-[5vw] md:h-[calc(100vh-3rem)] md:flex-row md:justify-end"
+      id="main"
+      class="mb-60 flex h-[calc(100vh-8rem)] w-full flex-col items-center justify-center gap-[5vw] px-[5vw] md:h-[calc(100vh-3rem)] md:flex-row md:justify-end"
     >
       <div class="basis-auto">
         <img
@@ -51,7 +52,7 @@ const boardImages = [
       </div>
     </div>
     <div class="container max-w-long-prose">
-      <h2 id="about" class="mb-12">Mission</h2>
+      <h2 id="about" class="mt-[48rem] mb-12">Mission</h2>
       <p class="mb-20 text-center font-serif text-2xl">
         We are the Boop Society of Central Texas, a non-profit organization
         dedicated to aiding organizational support for local, social, and
@@ -67,7 +68,7 @@ const boardImages = [
         look to help facilitate anything a pet player wants to make happen when
         we can.
       </p>
-      <h2 id="board" class="my-12">Board of Directors</h2>
+      <h2 id="board" class="mt-[72rem] mb-12">Board of Directors</h2>
       <div
         class="mt-20 flex flex-auto flex-col items-center gap-10 md:mb-20 md:flex-row md:gap-5"
       >
@@ -88,7 +89,7 @@ const boardImages = [
         }
       </div>
       <h2 id="officers" class="my-12">Officers</h2>
-      <p class="mb-20 text-center font-serif text-2xl">
+      <p class="mb-96 text-center font-serif text-2xl">
         President - Marchosias <br />
         marchosias@boopsocietyctx.org <br />
         <br />
@@ -111,8 +112,8 @@ const boardImages = [
         webmaster@boopsocietyctx.org <br />
       </p>
 
-      <h2 id="events" class="mb-12">Our Monthly Events</h2>
-      <div class="mb-20 flex flex-col gap-10 px-4">
+      <h2 id="events" class="mt-[72rem] mb-12">Our Monthly Events</h2>
+      <div class="mb-96 flex flex-col gap-10 px-4">
         <MarqueEvent
           header="Off The Leash - Park Munch/Social"
           desc="MUELLER PARK - 2ND SATURDAYS"
@@ -144,7 +145,7 @@ const boardImages = [
           class="justify-around"
         />
       </div>
-      <h2 id="contact" class="mb-12">Contact</h2>
+      <h2 id="contact" class="mt-[72rem] mb-12">Contact</h2>
       <p class="mb-10 text-center font-serif text-2xl">
         If you have pet play events in the central Texas area to share with us
         to promote, want to collaborate to organize, or need some assistance to
@@ -160,7 +161,7 @@ const boardImages = [
         Austin, TX 78727 <br />
       </p>
       <div
-        class="mx-[2vw] flex flex-row flex-wrap items-center justify-center gap-4"
+        class="mx-[2vw] mb-60 flex flex-row flex-wrap items-center justify-center gap-4"
       >
         <a href="mailto:info@boopsocietyctx.org">
           <img width="40" height="40" src={mail} alt="Boop Society E-mail" />
