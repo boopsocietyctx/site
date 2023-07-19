@@ -103,7 +103,7 @@ function NavBar() {
             <NavLink key="board" href="/#board">
               Board
             </NavLink>
-            <NavLink key="events" href="/#recurring-events">
+            <NavLink key="events" href="/#events">
               Events
             </NavLink>
             <NavLink
@@ -112,9 +112,6 @@ function NavBar() {
               href="https://buytickets.at/boopsocietyctx"
             >
               Calendar
-            </NavLink>
-            <NavLink key="updates" href="/#updates">
-              Social Feed
             </NavLink>
             <NavLink key="about-us" href="/about">
               About Us
@@ -126,7 +123,7 @@ function NavBar() {
               key="cal"
               target="_blank"
               href="
-              www.paypal.com/donate/?hosted_button_id=CDKCWWZCGR5NE"
+              https://www.paypal.com/donate/?hosted_button_id=CDKCWWZCGR5NE"
             >
               Donations
             </NavLink>
