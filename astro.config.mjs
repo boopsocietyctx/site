@@ -13,5 +13,6 @@ export default defineConfig({
       applyBaseStyles: false
     }
   }), image()],
+  output: 'server',
   adapter: cloudflare()
 });
