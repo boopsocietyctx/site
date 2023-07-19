@@ -100,21 +100,14 @@ function NavBar() {
             <NavLink key="home" href="/">
               Home
             </NavLink>
+            <NavLink key="about-us" href="/#about">
+              About Us
+            </NavLink>
             <NavLink key="board" href="/#board">
               Board
             </NavLink>
             <NavLink key="events" href="/#events">
               Events
-            </NavLink>
-            <NavLink
-              key="cal"
-              target="_blank"
-              href="https://buytickets.at/boopsocietyctx"
-            >
-              Calendar
-            </NavLink>
-            <NavLink key="about-us" href="/about">
-              About Us
             </NavLink>
             <NavLink key="contact-us" href="/contact">
               Contact Us
@@ -134,6 +127,13 @@ function NavBar() {
               https://drive.google.com/drive/folders/1Ap4VY_FqEy0ybCUKZi8L-jZC0WuLnQl9"
             >
               Resources
+            </NavLink>
+            <NavLink
+              key="cal"
+              target="_blank"
+              href="https://buytickets.at/boopsocietyctx"
+            >
+              Calendar
             </NavLink>
           </>
         ) : (
