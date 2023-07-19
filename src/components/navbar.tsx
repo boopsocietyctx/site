@@ -45,7 +45,7 @@ function NavBar() {
   const { menuTriggerProps } = useMenuTrigger({}, state, triggerRef);
   const { buttonProps } = useButton(menuTriggerProps, triggerRef);
   const isMobile = useMediaQuery({
-    maxWidth: 550,
+    maxWidth: 748,
   });
   const isSsr = useIsSSR();
   const showMobile = isSsr || isMobile;
@@ -55,7 +55,7 @@ function NavBar() {
       {showMobile ? (
         <button
           {...buttonProps}
-          className="mt-10 h-10 w-10 md:hidden"
+          className="h-10 w-10 md:hidden"
           ref={triggerRef}
         >
           <span className="sr-only">Toggle Navigation Menu</span>
