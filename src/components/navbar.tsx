@@ -100,24 +100,40 @@ function NavBar() {
             <NavLink key="home" href="/">
               Home
             </NavLink>
+            <NavLink key="about-us" href="/#about">
+              About Us
+            </NavLink>
             <NavLink key="board" href="/#board">
               Board
             </NavLink>
-            <NavLink key="events" href="/#recurring-events">
-              Monthly Events
+            <NavLink key="events" href="/#events">
+              Events
+            </NavLink>
+            <NavLink key="contact-us" href="/#contact">
+              Contact Us
+            </NavLink>
+            <NavLink
+              key="cal"
+              target="_blank"
+              href="
+              https://www.paypal.com/donate/?hosted_button_id=CDKCWWZCGR5NE"
+            >
+              Donations
+            </NavLink>
+            <NavLink
+              key="cal"
+              target="_blank"
+              href="
+              https://drive.google.com/drive/folders/1Ap4VY_FqEy0ybCUKZi8L-jZC0WuLnQl9"
+            >
+              Resources
             </NavLink>
             <NavLink
               key="cal"
               target="_blank"
               href="https://buytickets.at/boopsocietyctx"
             >
-              Event Calendar
-            </NavLink>
-            <NavLink key="updates" href="/#updates">
-              Social Feed
-            </NavLink>
-            <NavLink key="about-us" href="/about">
-              About Us
+              Calendar
             </NavLink>
           </>
         ) : (
