@@ -109,7 +109,7 @@ function NavBar() {
             <NavLink key="events" href="/#events">
               Events
             </NavLink>
-            <NavLink key="contact-us" href="/contact">
+            <NavLink key="contact-us" href="/#contact">
               Contact Us
             </NavLink>
             <NavLink
