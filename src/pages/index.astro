@@ -1,5 +1,4 @@
 ---
-import { Image } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import MarqueEvent from "../components/MarqueEvent.astro";
 
@@ -30,12 +29,11 @@ const boardImages = [
       class="flex h-[calc(100vh-8rem)] w-full flex-col items-center justify-center gap-[5vw] px-[5vw] md:h-[calc(100vh-3rem)] md:flex-row md:justify-end"
     >
       <div class="basis-auto">
-        <Image
+        <img
           src={boopHero}
-          width={480}
-          height={480}
+          width="480"
+          height="480"
           loading="eager"
-          format="webp"
           alt="Boop Society Hero Image"
         />
       </div>
@@ -53,13 +51,12 @@ const boardImages = [
         {
           boardImages.map(({ name, image }) => (
             <div class="flex flex-1 flex-col text-center text-4xl sm:max-w-[60vw]">
-              <Image
+              <img
                 src={image}
                 alt={`Board Member ${name}`}
-                format="webp"
                 loading="lazy"
-                width={300}
-                height={300}
+                width="300"
+                height="300"
                 class="rounded-full border-8 border-yellow-400"
               />
               <div class="my-5 font-serif">{name as string} </div>
@@ -102,8 +99,7 @@ const boardImages = [
         <script
           async
           src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
-        ></script>
+          charset="utf-8"></script>
       </div>
     </div>
   </main>
