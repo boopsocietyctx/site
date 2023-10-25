@@ -112,11 +112,7 @@ function NavBar() {
             <NavLink key="contact-us" href="/#contact">
               Contact Us
             </NavLink>
-            <NavLink
-              key="membership"
-              target="_blank"
-              href="http://eepurl.com/h7kkMf"
-            >
+            <NavLink key="mem" target="_blank" href="http://eepurl.com/h7kkMf">
               Membership
             </NavLink>
             <NavLink
