@@ -22,12 +22,7 @@ function NavLink({
   tabIndex,
   children,
   target,
-}: PropsWithChildren<{
-  to: string;
-  href: string;
-  tabIndex?: number;
-  target?: string;
-}>) {
+}: PropsWithChildren<{ href: string; tabIndex?: number; target?: string }>) {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const { linkProps } = useLink({}, linkRef);
   return (
@@ -102,23 +97,22 @@ function NavBar() {
       <div className="flex flex-col items-end gap-2 md:gap-1">
         {state.isOpen || !isMobile ? (
           <>
-            <NavLink to="/" key="home" href="/#main">
+            <NavLink key="home" href="/#main">
               Home
             </NavLink>
-            <NavLink to="/about" key="about-us" href="/#about">
+            <NavLink key="about-us" href="/#about">
               About Us
             </NavLink>
-            <NavLink to="/board" key="board" href="/#board">
+            <NavLink key="board" href="/#board">
               Board
             </NavLink>
-            <NavLink to="/events" key="events" href="/#events">
+            <NavLink key="events" href="/#events">
               Events
             </NavLink>
-            <NavLink to="/contact" key="contact-us" href="/#contact">
+            <NavLink key="contact-us" href="/#contact">
               Contact Us
             </NavLink>
             <NavLink
-              to="/membership"
               key="membership"
               target="_blank"
               href="http://eepurl.com/h7kkMf"
@@ -126,7 +120,6 @@ function NavBar() {
               Membership
             </NavLink>
             <NavLink
-              to="/donations"
               key="cal"
               target="_blank"
               href="
@@ -135,7 +128,6 @@ function NavBar() {
               Donations
             </NavLink>
             <NavLink
-              to="/resources"
               key="cal"
               target="_blank"
               href="
@@ -144,7 +136,6 @@ function NavBar() {
               Resources
             </NavLink>
             <NavLink
-              to="/calendar"
               key="cal"
               target="_blank"
               href="https://buytickets.at/boopsocietyctx"
