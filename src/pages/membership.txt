@@ -1,3 +1,5 @@
+<!-- THIS FILE TO BE REPLACED AFTER SIGN UP PERIODS. SO PLEASE CHANGE NAME BACK TO MEMBERSHIP.ASTRO FROM JAN TO SEPT -->
+
 ---
 import Layout from "../layouts/Layout.astro";
 ---
@@ -77,7 +79,7 @@ import Layout from "../layouts/Layout.astro";
 
     <h2 class="mb-10">Membership Application</h2>
     <p class="mb-20 text-left">
-      Membership applications are expected to open for 2024 membership soon.
+      Membership applications are expected to open for 2025 from Oct 2024 to Jan 2025.
       Keep an eye out for the update.
       <br />
       <br />
