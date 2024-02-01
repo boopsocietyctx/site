@@ -79,7 +79,7 @@ export const GET: APIRoute = async ({ request }) => {
     for (const occurrence of occurrenceRes.data) {
       const start = DateTime.fromISO(occurrence.start.iso);
       const occurrenceUrl = new URL(
-        `https://www.tickettailor.com/checkout/view-event/id/${series.id.replace("ev_", "")}/chk/${occurrence.chk}`,
+        `https://www.tickettailor.com/checkout/view-event/id/${series.id.replace("es_", "")}/chk/${occurrence.chk}`,
       ).toString();
       calendar.createEvent({
         id: occurrence.id,
