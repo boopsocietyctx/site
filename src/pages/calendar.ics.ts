@@ -1,3 +1,4 @@
+import assert from "node:assert/strict";
 import { getVtimezoneComponent } from "@touch4it/ical-timezones";
 import type { APIRoute } from "astro";
 import { compile } from "html-to-text";
