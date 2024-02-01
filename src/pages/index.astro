@@ -17,7 +17,7 @@ import mail from "../images/icons/ico-mail.png";
 import tg from "../images/icons/ico-tg.png";
 import tw from "../images/icons/ico-tw.png";
 
-const boardImages = [
+const board = [
   {
     name: "Marchosias",
     image: marchosiasPic,
@@ -39,6 +39,35 @@ const boardImages = [
     image: sharpPic,
   },
 ];
+
+const officers = [
+  {
+    title: "President",
+    name: "Marchosias",
+    email: "marchosias@boopsocietyctx.org",
+  },
+  { title: "Vice President", name: "Kie", email: "kie@boopsocietyctx.org" },
+  { title: "Secretary", name: "Clay", email: "clay@boopsocietyctx.org" },
+  { title: "Treasurer", name: "Polygon", email: "polygon@boopsocietyctx.org" },
+  {
+    title: "Event Coordinator",
+    name: "Pike",
+    email: "events@boopsocietyctx.org",
+  },
+  {
+    title: "Membership Coordinator",
+    name: "Ein",
+    email: "volunteer@boopsocietyctx.org",
+  },
+  {
+    title: "Inventory Manager",
+    name: "Pike & Ein",
+    email: "equipment@boopsocietyctx.org",
+  },
+  { title: "Webmaster", name: "Lyell", email: "webmaster@boopsocietyctx.org" },
+];
+
+const canonicalHost = new URL(Astro.request.url).host;
 ---
 
 <Layout>
@@ -63,8 +92,8 @@ const boardImages = [
       </div>
     </div>
     <div class="container max-w-long-prose">
-      <h2 id="about" class="mb-12 mt-[48rem]">Mission</h2>
-      <p class="mb-20 text-center font-serif text-2xl">
+      <h2 id="about" class="scroll-mt-20">Mission</h2>
+      <p class="text-center font-sans text-xl">
         We are the Boop Society of Central Texas, a non-profit organization
         dedicated to aiding organizational support for local, social, and
         educational events in the Central Texas area. We host 4 monthly social
@@ -79,55 +108,9 @@ const boardImages = [
         look to help facilitate anything a pet player wants to make happen when
         we can.
       </p>
-      <h2 id="board" class="mb-12 mt-[72rem]">Board of Directors</h2>
-      <div
-        class="mt-20 flex flex-auto flex-col items-center gap-10 md:mb-20 md:flex-row md:gap-5"
-      >
-        {
-          boardImages.map(({ name, image }) => (
-            <div class="flex flex-1 flex-col text-center text-5xl sm:max-w-[60vw]">
-              <img
-                src={image.src}
-                alt={`Board Member ${name}`}
-                loading="lazy"
-                width="300"
-                height="300"
-                class="rounded-full border-8 border-yellow-400"
-              />
-              <div class="mt-10 font-serif">{name as string} </div>
-            </div>
-          ))
-        }
-      </div>
-      <h2 id="officers" class="my-12">Officers</h2>
-      <p class="mb-96 text-center font-serif text-2xl">
-        President - Marchosias <br />
-        marchosias@boopsocietyctx.org <br />
-        <br />
-        Vice President - Kie <br />
-        kie@boopsocietyctx.org <br />
-        <br />
-        Secretary - Clay <br />
-        clay@boopsocietyctx.org <br />
-        <br />
-        Treasurer - Polygon <br />
-        clay@boopsocietyctx.org <br />
-        <br />
-        Event Coordinator - Pike <br />
-        events@boopsocietyctx.org <br />
-        <br />
-        Membership Coordinator - Ein <br />
-        volunteer@boopsocietyctx.org <br />
-        <br />
-        Inventory Manager - Pike and Ein <br />
-        equipment@boopsocietyctx.org<br />
-        <br />
-        Webmaster - Lyell <br />
-        webmaster@boopsocietyctx.org <br />
-      </p>
 
-      <h2 id="events" class="mb-12 mt-[72rem]">Our Monthly Events</h2>
-      <div class="mb-96 flex flex-col gap-10 px-4">
+      <h2 id="events" class="mb-12 mt-40 scroll-mt-20">Our Monthly Events</h2>
+      <div class="flex flex-col gap-10 px-4">
         <MarqueEvent
           header="Off The Leash - Park Munch/Social"
           desc="MUELLER HALCYON - 2ND SATURDAYS - 5 PM (Apr-Oct) | 2 PM (Nov-Mar)"
@@ -158,24 +141,75 @@ const boardImages = [
           desc="HELD EVERY QUARTER"
           class="justify-around"
         />
+        <p class="mt-2 font-sans font-semibold">
+          You can view the <a class="underline" href="/calendar"
+            >live calendar of upcoming events and RSVP ahead here</a
+          >.<br /><br />
+          <span class="font-thin"
+            >The live calendar is also available <a
+              class="underline"
+              href={`webcal://${canonicalHost}/calendar.ics`}>via iCal</a
+            >.</span
+          >
+        </p>
       </div>
-      <h2 id="contact" class="mb-12 mt-[72rem]">Contact Us</h2>
-      <p class="mb-10 text-center font-serif text-2xl">
+      <h2 id="board" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
+      <div
+        class="mt-20 flex flex-auto flex-col items-center gap-10 md:mb-20 md:flex-row md:gap-5"
+      >
+        {
+          board.map(({ name, image }) => (
+            <div class="flex flex-1 flex-col text-center text-5xl sm:max-w-[60vw]">
+              <img
+                src={image.src}
+                alt={`Board Member ${name}`}
+                loading="lazy"
+                width="300"
+                height="300"
+                class="rounded-full border-8 border-yellow-400"
+              />
+              <div class="mt-10 font-serif">{name as string} </div>
+            </div>
+          ))
+        }
+      </div>
+      <h2 id="officers" class="mb-12 mt-40 scroll-mt-20">Officers</h2>
+      <div
+        class="grid gap-x-4 gap-y-10 text-center font-serif text-3xl md:grid-cols-2"
+      >
+        {
+          officers.map((officer) => (
+            <p>
+              {officer.title} <span class="text-yellow-400">-</span>{" "}
+              {officer.name}
+              <br />
+              <a class="text-lg underline" href={`mailto:${officer.email}`}>
+                {officer.email}
+              </a>
+            </p>
+          ))
+        }
+      </div>
+
+      <h2 id="contact" class="mb-12 mt-40 scroll-mt-20">Contact Us</h2>
+      <p class="mb-10 text-center font-sans text-xl">
         If you have pet play events in the central Texas area to share with us
         to promote, want to collaborate to organize, or need some assistance to
         put together, or you have some ideas for adding education and petplay
-        experiences into the community, feel free to send us a message through
-        our e-mail or social media linked through the icons below.
+        experiences into the community, feel free to send us an email to the
+        appropriate officer <a href="#officers">listed above</a>
+        or social media linked through the icons below.
       </p>
-      <p class="mb-14 text-center font-serif text-2xl">
-        If you need to send a physical mail, please use the following address: <br
-        />
+      <p class="text-center font-sans text-xl">
+        If you need to send a physical mail, please use the following address:
+      </p>
+      <p class="mt-4 text-center font-sans text-lg font-semibold">
         6001 W Parmer Ln <br />
         Ste 370-1198 <br />
-        Austin, TX 78727 <br />
+        Austin, TX 78727
       </p>
       <div
-        class="mx-[2vw] mb-60 flex flex-row flex-wrap items-center justify-center gap-4"
+        class="mx-[2vw] mb-60 mt-20 flex flex-row flex-wrap items-center justify-center gap-4"
       >
         <a href="mailto:boop@boopsocietyctx.org">
           <img

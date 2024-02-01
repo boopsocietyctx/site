@@ -85,11 +85,18 @@ export function NavBar() {
             <NavLink key="about-us" href="/#about">
               About Us
             </NavLink>
-            <NavLink key="board" href="/#board">
-              Board
-            </NavLink>
             <NavLink key="events" href="/#events">
               Events
+            </NavLink>
+            <NavLink
+              key="cal"
+              target="_blank"
+              href="https://buytickets.at/boopsocietyctx"
+            >
+              Live Calendar
+            </NavLink>
+            <NavLink key="board" href="/#board">
+              Board
             </NavLink>
             <NavLink key="contact-us" href="/#contact">
               Contact Us
@@ -112,13 +119,6 @@ export function NavBar() {
               https://drive.google.com/drive/folders/1Ap4VY_FqEy0ybCUKZi8L-jZC0WuLnQl9"
             >
               Resources
-            </NavLink>
-            <NavLink
-              key="cal"
-              target="_blank"
-              href="https://buytickets.at/boopsocietyctx"
-            >
-              Calendar
             </NavLink>
           </>
         ) : (
