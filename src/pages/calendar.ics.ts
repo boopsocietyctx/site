@@ -9,18 +9,14 @@ import {
   EventSeriesResponseSchema,
 } from "../schemas/ticketTailorSchema";
 
-export const GET: APIRoute = async ({ locals, request }) => {
-  const cachedIcs = await locals.runtime.env.CACHE.get("calendar.ics");
-  if (cachedIcs && !new URL(request.url).searchParams.has("preview")) {
-    return new Response(cachedIcs, {
-      headers: {
-        "Content-Type": "text/calendar; charset=utf-8",
-        "Content-Disposition": 'attachment; filename="boopsocietyctx.ics"',
-      },
-    });
-  }
+export const prerender = true;
 
-  const apiToken = locals.runtime.env.TICKET_TAILOR_API_TOKEN;
+export const GET: APIRoute = async ({ request }) => {
+  assert(
+    typeof process.env.TICKET_TAILOR_API_TOKEN === "string",
+    "You must set TICKET_TAILOR_API_TOKEN environment variable. Make sure either the secret is set in build settings or you're running local:build.",
+  );
+  const apiToken = process.env.TICKET_TAILOR_API_TOKEN;
 
   const tt = ky.extend({
     prefixUrl: "https://api.tickettailor.com/",
@@ -104,11 +100,6 @@ export const GET: APIRoute = async ({ locals, request }) => {
       });
     }
   }
-
-  const ics = calendar.toString();
-  await locals.runtime.env.CACHE.put("calendar.ics", ics, {
-    expirationTtl: 60 * 60 * 4,
-  });
 
   return new Response(calendar.toString(), {
     headers: {

@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "full-dev": "doppler run -- astro dev",
-    "tt": "doppler run -- tsx scripts/ticketTailor.mts",
     "build": "astro build",
+    "local:build": "doppler run -- astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,astro}",
