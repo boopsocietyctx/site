@@ -79,7 +79,7 @@ export const GET: APIRoute = async ({ request }) => {
     for (const occurrence of occurrenceRes.data) {
       const start = DateTime.fromISO(occurrence.start.iso);
       const occurrenceUrl = new URL(
-        `select-event/${start.toFormat("yyyy-MM-dd")}`,
+        `select-event/${start.setZone(series.timezone).toFormat("yyyy-MM-dd")}`,
         series.url.endsWith("/") ? series.url : `${series.url}/`,
       ).toString();
       calendar.createEvent({
@@ -88,7 +88,7 @@ export const GET: APIRoute = async ({ request }) => {
         description: series.description
           ? {
               plain: `RSVP here: ${occurrenceUrl} | \n${htmlStrip(series.description)}`,
-              html: `<p>RSVP here: <a href="${occurrenceUrl}">${occurrenceUrl}</a></p>${series.description}`,
+              html: `<p>RSVP here: <a href="${occurrenceUrl}">${occurrenceUrl}</a> |</p>${series.description}`,
             }
           : undefined,
         start,
