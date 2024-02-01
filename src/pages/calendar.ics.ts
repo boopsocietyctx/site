@@ -14,11 +14,11 @@ export const prerender = true;
 
 export const GET: APIRoute = async ({ request }) => {
   assert(
-    typeof process.env.TICKET_TAILOR_API_TOKEN === "string",
+    typeof process.env.TICKET_TAILOR_API_TOKEN === "string" &&
+      process.env.TICKET_TAILOR_API_TOKEN !== "",
     "You must set TICKET_TAILOR_API_TOKEN environment variable. Make sure either the secret is set in build settings or you're running local:build.",
   );
   const apiToken = process.env.TICKET_TAILOR_API_TOKEN;
-  console.log({ apiToken });
 
   const tt = ky.extend({
     prefixUrl: "https://api.tickettailor.com/",
