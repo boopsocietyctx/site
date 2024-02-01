@@ -79,8 +79,8 @@ export const GET: APIRoute = async ({ request }) => {
     for (const occurrence of occurrenceRes.data) {
       const start = DateTime.fromISO(occurrence.start.iso);
       const occurrenceUrl = new URL(
-        `select-date/${start.setZone(series.timezone).toFormat("yyyy-MM-dd")}`,
-        series.url.endsWith("/") ? series.url : `${series.url}/`,
+        `/checkout/view-event/id/${series.id.replace("ev_", "")}/chk/${occurrence.chk}`,
+        series.url,
       ).toString();
       calendar.createEvent({
         id: occurrence.id,
