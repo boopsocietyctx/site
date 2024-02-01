@@ -1,21 +1,7 @@
 import { PropsWithChildren, useRef } from "react";
-import {
-  SSRProvider,
-  useButton,
-  useIsSSR,
-  useLink,
-  useMenuTrigger,
-} from "react-aria";
+import { useButton, useIsSSR, useLink, useMenuTrigger } from "react-aria";
 import { useMediaQuery } from "react-responsive";
 import { useMenuTriggerState } from "react-stately";
-
-export function NavRoot() {
-  return (
-    <SSRProvider>
-      <NavBar />
-    </SSRProvider>
-  );
-}
 
 function NavLink({
   href,
@@ -39,7 +25,7 @@ function NavLink({
   );
 }
 
-function NavBar() {
+export function NavBar() {
   const state = useMenuTriggerState({});
   const triggerRef = useRef<HTMLButtonElement>(null);
   const { menuTriggerProps } = useMenuTrigger({}, state, triggerRef);
@@ -51,19 +37,15 @@ function NavBar() {
   const showMobile = isSsr || isMobile;
 
   return (
-    <nav className="sticky top-0 right-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4 md:top-10">
+    <nav className="sticky right-0 top-0 float-right mb-[-1000px] flex flex-auto flex-col flex-wrap items-end justify-center gap-2 rounded-xl bg-background/50 p-4 md:top-10">
       {showMobile ? (
-        <button
-          {...buttonProps}
-          className="h-10 w-10 md:hidden"
-          ref={triggerRef}
-        >
+        <button {...buttonProps} className="size-10 md:hidden" ref={triggerRef}>
           <span className="sr-only">Toggle Navigation Menu</span>
           {state.isOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              className="h-10 w-10"
+              className="size-10"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -79,7 +61,7 @@ function NavBar() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              className="h-10 w-10"
+              className="size-10"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

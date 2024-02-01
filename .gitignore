@@ -11,6 +11,9 @@
 # astro
 dist/
 
+# cloudflare
+.wrangler
+
 # misc
 .DS_Store
 *.pem
@@ -23,6 +26,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+*.vars
 
 # vercel
 .vercel

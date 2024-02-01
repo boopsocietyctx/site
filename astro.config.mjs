@@ -1,16 +1,21 @@
-/* eslint-disable import/order */
-import { defineConfig } from 'astro/config';
-import react from "@astrojs/react";
 import cloudflare from '@astrojs/cloudflare';
+import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
+    applyBaseStyles: false
   })],
   output: 'server',
-  adapter: cloudflare()
+  adapter: cloudflare({
+    runtime: {
+      mode: "local", type: "pages", bindings: {
+        CACHE: {
+          type: "kv"
+        }
+      }
+    }
+  })
 });

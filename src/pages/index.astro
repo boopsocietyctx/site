@@ -49,7 +49,7 @@ const boardImages = [
     >
       <div class="basis-auto">
         <img
-          src={boopHero}
+          src={boopHero.src}
           width="480"
           height="480"
           loading="eager"
@@ -63,7 +63,7 @@ const boardImages = [
       </div>
     </div>
     <div class="container max-w-long-prose">
-      <h2 id="about" class="mt-[48rem] mb-12">Mission</h2>
+      <h2 id="about" class="mb-12 mt-[48rem]">Mission</h2>
       <p class="mb-20 text-center font-serif text-2xl">
         We are the Boop Society of Central Texas, a non-profit organization
         dedicated to aiding organizational support for local, social, and
@@ -79,7 +79,7 @@ const boardImages = [
         look to help facilitate anything a pet player wants to make happen when
         we can.
       </p>
-      <h2 id="board" class="mt-[72rem] mb-12">Board of Directors</h2>
+      <h2 id="board" class="mb-12 mt-[72rem]">Board of Directors</h2>
       <div
         class="mt-20 flex flex-auto flex-col items-center gap-10 md:mb-20 md:flex-row md:gap-5"
       >
@@ -87,7 +87,7 @@ const boardImages = [
           boardImages.map(({ name, image }) => (
             <div class="flex flex-1 flex-col text-center text-5xl sm:max-w-[60vw]">
               <img
-                src={image}
+                src={image.src}
                 alt={`Board Member ${name}`}
                 loading="lazy"
                 width="300"
@@ -126,7 +126,7 @@ const boardImages = [
         webmaster@boopsocietyctx.org <br />
       </p>
 
-      <h2 id="events" class="mt-[72rem] mb-12">Our Monthly Events</h2>
+      <h2 id="events" class="mb-12 mt-[72rem]">Our Monthly Events</h2>
       <div class="mb-96 flex flex-col gap-10 px-4">
         <MarqueEvent
           header="Off The Leash - Park Munch/Social"
@@ -159,7 +159,7 @@ const boardImages = [
           class="justify-around"
         />
       </div>
-      <h2 id="contact" class="mt-[72rem] mb-12">Contact Us</h2>
+      <h2 id="contact" class="mb-12 mt-[72rem]">Contact Us</h2>
       <p class="mb-10 text-center font-serif text-2xl">
         If you have pet play events in the central Texas area to share with us
         to promote, want to collaborate to organize, or need some assistance to
@@ -178,13 +178,18 @@ const boardImages = [
         class="mx-[2vw] mb-60 flex flex-row flex-wrap items-center justify-center gap-4"
       >
         <a href="mailto:boop@boopsocietyctx.org">
-          <img width="40" height="40" src={mail} alt="Boop Society E-mail" />
+          <img
+            width="40"
+            height="40"
+            src={mail.src}
+            alt="Boop Society E-mail"
+          />
         </a>
         <a href="https://www.facebook.com/boopsocietyctx">
           <img
             width="40"
             height="40"
-            src={fb}
+            src={fb.src}
             alt="Boop Society Facebook Page"
           />
         </a>
@@ -192,7 +197,7 @@ const boardImages = [
           <img
             width="40"
             height="40"
-            src={ig}
+            src={ig.src}
             alt="Boop Society Instagram Page"
           />
         </a>
@@ -200,7 +205,7 @@ const boardImages = [
           <img
             width="40"
             height="40"
-            src={tw}
+            src={tw.src}
             alt="Boop Society Twitter Page"
           />
         </a>
@@ -208,7 +213,7 @@ const boardImages = [
           <img
             width="40"
             height="40"
-            src={fl}
+            src={fl.src}
             alt="Boop Society Fetlife Page"
           />
         </a>
@@ -216,14 +221,14 @@ const boardImages = [
           <img
             width="40"
             height="40"
-            src={tg}
+            src={tg.src}
             alt="Boop Society Telegram Channel"
           />
           <a href="https://bsky.app/profile/boopsocietyctx.bsky.social">
             <img
               width="40"
               height="40"
-              src={bs}
+              src={bs.src}
               alt="Boop Society Bluesky Page"
             />
           </a>
