@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [react(), tailwind({
     applyBaseStyles: false
   })],
+  site: process.env.SITE_URL ?? process.env.CF_PAGES_URL ?? 'http://localhost:4321/',
   output: 'server',
   adapter: cloudflare({
     runtime: {

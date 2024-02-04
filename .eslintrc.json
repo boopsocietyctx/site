@@ -28,6 +28,15 @@
           ".astro"
         ]
       }
+    },
+    {
+      "files": [
+        "*.config.mjs",
+        "*.config.js"
+      ],
+      "env": {
+        "node": true
+      }
     }
   ],
   "rules": {
