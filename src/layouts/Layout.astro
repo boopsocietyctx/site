@@ -4,13 +4,18 @@ import { SEO } from "astro-seo";
 import { NavBar } from "../components/navbar";
 import hero from "../images/boop-hero.png";
 import "../styles/base.css";
+
+const heroUrl = new URL(hero.src, Astro.site).toString();
 ---
 
-<html lang="en" class="dark">
+<html lang="en" class="dark" prefix="og: http://ogp.me/ns#">
   <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
     <SEO
-      titleDefault="Home"
+      titleDefault="Boop Society of CTX"
       titleTemplate="%s - Boop Society CTX"
       description={Astro.props.description ??
         "A Texas nonprofit corporation assisting pet players around the central Texas region come together and organize community events."}
@@ -18,10 +23,11 @@ import "../styles/base.css";
         basic: {
           title: "Boop Society of Central Texas",
           type: "website",
-          image: hero.src,
+          image: heroUrl,
         },
         optional: {
           siteName: "Boop Society CTX",
+          locale: "en_US",
         },
         image: {
           type: `image/${hero.format}`,
@@ -32,6 +38,10 @@ import "../styles/base.css";
       }}
       twitter={{
         site: "@boopsocietyctx",
+        card: "summary",
+        title: "Boop Society CTX",
+        image: heroUrl,
+        imageAlt: "Boop Society of Central Texas Logo",
       }}
       extend={{
         link: [
