@@ -88,7 +88,6 @@ export const GET: APIRoute = async ({ request }) => {
         description: series.description
           ? {
               plain: `RSVP here: ${occurrenceUrl} | \n${htmlStrip(series.description)}`,
-              html: `<p>RSVP here: <a href="${occurrenceUrl}">${occurrenceUrl}</a> |</p>${series.description}`,
             }
           : undefined,
         start,
