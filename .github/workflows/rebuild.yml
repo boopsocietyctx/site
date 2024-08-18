@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  schedule:
+    - cron: '0 15 * * 1-5'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: '.node-version'
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run lint
+
+    - name: Deploy Site
+      uses: fjogeleit/http-request-action@v1
+      with:
+          url: ${{ secrets.CLOUDFLARE_DEPLOYMENT_WEBHOOK_URL }}

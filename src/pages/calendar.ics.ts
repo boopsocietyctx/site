@@ -1,5 +1,3 @@
-import assert from "node:assert/strict";
-import { getVtimezoneComponent } from "@touch4it/ical-timezones";
 import type { APIRoute } from "astro";
 import { compile } from "html-to-text";
 import ical, { ICalCalendarMethod, ICalEventStatus } from "ical-generator";
@@ -13,11 +11,14 @@ import {
 export const prerender = true;
 
 export const GET: APIRoute = async ({ request }) => {
-  assert(
-    typeof process.env.TICKET_TAILOR_API_TOKEN === "string" &&
-      process.env.TICKET_TAILOR_API_TOKEN !== "",
-    "You must set TICKET_TAILOR_API_TOKEN environment variable. Make sure either the secret is set in build settings or you're running local:build.",
-  );
+  if (
+    !(typeof process.env.TICKET_TAILOR_API_TOKEN === "string") ||
+    process.env.TICKET_TAILOR_API_TOKEN == ""
+  ) {
+    throw new Error(
+      "You must set TICKET_TAILOR_API_TOKEN environment variable. Make sure either the secret is set in build settings or you're running local:build.",
+    );
+  }
   const apiToken = process.env.TICKET_TAILOR_API_TOKEN;
 
   const tt = ky.extend({
@@ -46,7 +47,7 @@ export const GET: APIRoute = async ({ request }) => {
     method: ICalCalendarMethod.PUBLISH,
     timezone: {
       name: "America/Chicago",
-      generator: getVtimezoneComponent,
+      generator: () => AmericaChicagoTimezoneComponent,
     },
     x: {
       "X-WR-RELCALID": "bsctx-65c2bb03-0559-4e7d-be0b-cba529ef8f50",
@@ -109,3 +110,29 @@ export const GET: APIRoute = async ({ request }) => {
     },
   });
 };
+
+const AmericaChicagoTimezoneComponent = `
+BEGIN:VCALENDAR
+PRODID:-//tzurl.org//NONSGML Olson 2018g-rearguard//EN
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+TZURL:http://tzurl.org/zoneinfo-outlook/America/Chicago
+X-LIC-LOCATION:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+END:VCALENDAR
+`.trim();

@@ -11,12 +11,13 @@ export default defineConfig({
   site: process.env.SITE_URL ?? process.env.CF_PAGES_URL ?? 'http://localhost:4321/',
   output: 'server',
   adapter: cloudflare({
-    runtime: {
-      mode: "local", type: "pages", bindings: {
-        CACHE: {
-          type: "kv"
-        }
-      }
+    platformProxy: {
+      enabled: true
+    },
+  }),
+  vite: {
+    build: {
+      sourcemap: true
     }
-  })
+  }
 });
