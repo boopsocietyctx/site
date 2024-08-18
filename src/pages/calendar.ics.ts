@@ -1,4 +1,5 @@
 import type { APIRoute } from "astro";
+import { getCollection } from "astro:content";
 import { compile } from "html-to-text";
 import ical, { ICalCalendarMethod, ICalEventStatus } from "ical-generator";
 import ky from "ky";
@@ -100,6 +101,26 @@ export const GET: APIRoute = async ({ request }) => {
         url: occurrenceUrl,
       });
     }
+  }
+
+  const eventCollection = await getCollection("events");
+  for (const event of eventCollection) {
+    const { data } = event;
+    calendar.createEvent({
+      id: event.slug,
+      summary: data.summary.slice(0, 254),
+      description: data.description
+        ? {
+            plain: htmlStrip(data.description),
+          }
+        : undefined,
+      start: data.start,
+      end: data.end,
+      timezone: "America/Chicago",
+      location: data.location,
+      organizer: "Boop Society CTX <webmaster@boopsocietyctx.com>",
+      url: data.url,
+    });
   }
 
   return new Response(calendar.toString(), {
