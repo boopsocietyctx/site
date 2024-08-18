@@ -112,9 +112,6 @@ export const GET: APIRoute = async ({ request }) => {
 };
 
 const AmericaChicagoTimezoneComponent = `
-BEGIN:VCALENDAR
-PRODID:-//tzurl.org//NONSGML Olson 2018g-rearguard//EN
-VERSION:2.0
 BEGIN:VTIMEZONE
 TZID:America/Chicago
 TZURL:http://tzurl.org/zoneinfo-outlook/America/Chicago
@@ -134,5 +131,4 @@ DTSTART:19701101T020000
 RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
 END:STANDARD
 END:VTIMEZONE
-END:VCALENDAR
 `.trim();
