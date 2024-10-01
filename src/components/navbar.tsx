@@ -101,7 +101,7 @@ export function NavBar() {
             <NavLink key="contact-us" href="/#contact">
               Contact Us
             </NavLink>
-            <NavLink key="mem" target="_blank" href="https://eepurl.com/h7kkMf">
+            <NavLink key="mem" target="_blank" href="apply.boopsocieytctx.org">
               Membership
             </NavLink>
             <NavLink
