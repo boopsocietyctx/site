@@ -219,7 +219,7 @@ const canonicalHost = new URL(Astro.request.url).host;
               <br />
               {name as string}
               <br />
-              {board.pronouns}
+              {pronouns}
             </p>
           ))
         }
@@ -237,8 +237,8 @@ const canonicalHost = new URL(Astro.request.url).host;
                 height="150"
               />
               <br />
-              {officer.title}-{" "}
-              {officer.name}, {officer.pronouns}
+              {officer.title}{" "}-{" "}
+              {officer.name} ({officer.pronouns})
               <br />
               <a class="text-lg underline" href={`mailto:${officer.email}`}>
                 {officer.email}
