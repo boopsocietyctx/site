@@ -195,6 +195,7 @@ const canonicalHost = new URL(Astro.request.url).host;
       </div>
       <h2 id="board" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
       <div align="center" class="mt-20 flex flex-auto flex-col items-center gap-10 md:mb-20 md:flex-row md:gap-5">
+      <div>
         {
           board1.map(({ name, image }) => (
             <div class="flex flex-1 flex-col items-center text-center text-5xl sm:max-w-[60vw]">
@@ -209,7 +210,9 @@ const canonicalHost = new URL(Astro.request.url).host;
             </div>
           ))
         }
+      </div>
       <br />
+      <div>
         {
           board2.map(({ name, image }) => (
             <div class="flex flex-1 flex-col items-center text-center text-5xl sm:max-w-[60vw]">
@@ -224,6 +227,7 @@ const canonicalHost = new URL(Astro.request.url).host;
             </div>
           ))
         }
+      </div>
       </div>
       <h2 id="officers" class="mb-12 mt-40 scroll-mt-20">Officers</h2>
       <div
