@@ -193,12 +193,12 @@ const canonicalHost = new URL(Astro.request.url).host;
           >
         </p>
       </div>
-      <h2 id="board1" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
+      <h2 id="board" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
       <div
         align="center" class="mt-20 flex flex-auto flex-col items-center gap-10 md:mb-20 md:flex-row md:gap-5"
       >
         {
-          board.map(({ name, image }) => (
+          board1.map(({ name, image }) => (
             <div class="flex flex-1 flex-col items-center text-center text-5xl sm:max-w-[60vw]">
               <img
                 src={image.src}
@@ -213,12 +213,12 @@ const canonicalHost = new URL(Astro.request.url).host;
         }
       </div>
       <br />
-      <h2 id="board2" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
+      <h2 id="board" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
       <div
         align="center" class="mt-20 flex flex-auto flex-col items-center gap-10 md:mb-20 md:flex-row md:gap-5"
       >
         {
-          board.map(({ name, image }) => (
+          board2.map(({ name, image }) => (
             <div class="flex flex-1 flex-col items-center text-center text-5xl sm:max-w-[60vw]">
               <img
                 src={image.src}
