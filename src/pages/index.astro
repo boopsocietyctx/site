@@ -201,8 +201,8 @@ const canonicalHost = new URL(Astro.request.url).host;
                 src={image.src}
                 alt={`Board Member - ${name}`}
                 loading="lazy"
-                width="250px"
-                height="250px"
+                width="250"
+                height="250"
                 class="rounded-full border-8 border-yellow-200"
               />
               <div class="mt-10 font-serif">{name as string} </div>
@@ -221,8 +221,8 @@ const canonicalHost = new URL(Astro.request.url).host;
                 src={officer.image.src}
                 alt={`Officer - ${officer.name}`}
                 loading="lazy"
-                width="250px"
-                height="250px"
+                width="250"
+                height="250"
               />
               <br />
               {officer.title} <span class="text-yellow-400">-</span>{" "}
