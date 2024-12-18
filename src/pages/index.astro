@@ -205,10 +205,10 @@ const canonicalHost = new URL(Astro.request.url).host;
         </p>
       </div>
       <h2 id="board" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
-      <div class="text-center font-serif text-4xl mt-20 grid grid-cols-1 md:grid-cols-4 gap-10 md:mb-20">
+      <div class="items-center text-center font-serif text-4xl mt-20 grid grid-cols-1 md:grid-cols-4 gap-10 md:mb-20">
         {
           board.map(({ name, image, pronouns }) => (
-             <p align="center">
+             <p>
               <img
                 src={image.src}
                 alt={`Board Member - ${name}`}
@@ -224,10 +224,10 @@ const canonicalHost = new URL(Astro.request.url).host;
         }
       </div>
       <h2 id="officers" class="mb-12 mt-40 scroll-mt-20">Officers</h2>
-      <div class="grid gap-x-4 gap-y-10 text-center font-serif text-4xl md:grid-cols-2">
+      <div class="grid gap-x-4 gap-y-10 items-center text-center font-serif text-4xl md:grid-cols-2">
         {
           officers.map((officer) => (
-            <div align="center">
+            <div>
               <img
                 src={officer.image.src}
                 alt={`Officer - ${officer.name}`}
@@ -236,10 +236,8 @@ const canonicalHost = new URL(Astro.request.url).host;
                 height="150"
               />
               <p class="underline">{officer.title}</p>
-              <p class="text-3xl">{officer.pronouns}</p>
-              <a class="text-lg underline" href={`mailto:${officer.email}`}>
-                {officer.email}
-              </a>
+              <p class="text-3xl">{officer.name}{" "}{officer.pronouns}</p>
+              <a class="text-lg underline" href={`mailto:${officer.email}`}>{officer.email}</a>
             </div>
           ))
         }
