@@ -234,8 +234,8 @@ const canonicalHost = new URL(Astro.request.url).host;
                 loading="lazy"
                 width="150"
                 height="150"
-              />
-              <p class="underline">{officer.title}</p> <br>
+              /><br>
+              <p class="underline">{officer.title}</p>
               <p class="text-3xl">{officer.name}{" "}{officer.pronouns}</p>
               <a class="text-lg underline" href={`mailto:${officer.email}`}>{officer.email}</a>
             </div>
