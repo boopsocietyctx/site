@@ -1,13 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MarqueEvent from "../components/MarqueEvent.astro";
-
-import clayPic from "../images/board/clay.jpg";
-import kiePic from "../images/board/kie.jpg";
-import marchosiasPic from "../images/board/marchosias.jpg";
-import polygonPic from "../images/board/polygon.jpg";
-import sharpPic from "../images/board/sharp.jpg";
 import boopHero from "../images/boop-hero.png";
+
+import clay2024 from "../images/board/2024/clay.jpg";
+import marchosias2024 from "../images/board/2024/marchosias.jpg";
+import sharp2024 from "../images/board/2024/sharp.jpg";
+import dono2025 from "../images/officers/2025/dono.png";
+import champ2025 from "../images/officers/2025/champ.png";
+import neil2025 from "../images/officers/2025/neil.png";
+import ace2025 from "../images/officers/2025/ace.png";
+import tigerdill2025 from "../images/officers/2025/tigerdill.png";
+import kie2025 from "../images/officers/2025/kie.png";
+import polygon2025 from "../images/officers/2025/polygon.png";
 
 import bs from "../images/icons/ico-bs.png";
 import fb from "../images/icons/ico-fb.png";
@@ -20,51 +25,79 @@ import tw from "../images/icons/ico-tw.png";
 const board = [
   {
     name: "Marchosias",
-    image: marchosiasPic,
+    image: marchosias2024,
   },
   {
     name: "Polygon",
-    image: polygonPic,
-  },
-  {
-    name: "Clay",
-    image: clayPic,
+    image: polygon2025,
   },
   {
     name: "Kie",
-    image: kiePic,
+    image: kie2025,
   },
   {
     name: "Sharp",
-    image: sharpPic,
+    image: sharp2024,
+  },
+  {
+    name: "Clay",
+    image: clay2024,
+  },
+  {
+    name: "Champ the Fox",
+    image: champ2025,
+  },
+  {
+    name: "Neil",
+    image: neil2025,
   },
 ];
 
 const officers = [
   {
+    image: kie2025,
     title: "President",
-    name: "Marchosias",
-    email: "marchosias@boopsocietyctx.org",
+    name: "Kie",
+    email: "kie@boopsocietyctx.org",
   },
-  { title: "Vice President", name: "Kie", email: "kie@boopsocietyctx.org" },
-  { title: "Secretary", name: "Clay", email: "clay@boopsocietyctx.org" },
-  { title: "Treasurer", name: "Polygon", email: "polygon@boopsocietyctx.org" },
+  { image: champ2025,
+    title: "Vice President",
+    name: "Champ the Fox",
+    email: "champ@boopsocietyctx.org"
+  },
+  { image: neil2025,
+    title: "Secretary (Interim)",
+    name: "Neil",
+    email: "neil@boopsocietyctx.org"
+  },
+  { image: polygon2025,
+    title: "Treasurer",
+    name: "Polygon",
+    email: "polygon@boopsocietyctx.org"
+    },
   {
-    title: "Event Coordinator",
-    name: "Pike",
-    email: "events@boopsocietyctx.org",
+    image: ace2025,
+    title: "Event Coordinator (Interim)",
+    name: "Ace",
+    email: "ace@boopsocietyctx.org",
   },
   {
+    image: neil2025,
     title: "Membership Coordinator",
-    name: "Dono",
+    name: "Neil",
     email: "volunteer@boopsocietyctx.org",
   },
   {
+    image: tigerdill2025,
     title: "Inventory Manager",
-    name: "Pike",
+    name: "Tigerdill",
     email: "equipment@boopsocietyctx.org",
   },
-  { title: "Webmaster", name: "Lyell", email: "webmaster@boopsocietyctx.org" },
+  { image: dono2025,
+    title: "Webmaster",
+    name: "Dono",
+    email: "webmaster@boopsocietyctx.org"
+  },
 ];
 
 const canonicalHost = new URL(Astro.request.url).host;
@@ -112,33 +145,38 @@ const canonicalHost = new URL(Astro.request.url).host;
       <h2 id="events" class="mb-12 mt-40 scroll-mt-20">Our Monthly Events</h2>
       <div class="flex flex-col gap-10 px-4">
         <MarqueEvent
+          header="Critter Mosh at The Eagle"
+          desc="THE AUSTIN EAGLE | 1st MONDAYS | 7:30 PM | 21+"
+          class="justify-around"
+        />
+        <MarqueEvent
           header="Off The Leash - Park Munch/Social"
-          desc="MUELLER HALCYON - 2ND SATURDAYS - 5 PM (Apr-Oct) | 2 PM (Nov-Mar)"
+          desc="MUELLER DOG PARK | 2ND SATURDAYS | 6 PM (Apr-Oct) | 2 PM (Nov-Mar) | 18+"
           class="justify-around"
         />
         <MarqueEvent
           header="Snoot Boop Munch"
-          desc="THE AUSTIN EAGLE - 3rd WEDNESDAYS - 7 PM"
+          desc="THE AUSTIN EAGLE | 3rd WEDNESDAYS | 7 PM | 21+"
           class="justify-around"
         />
         <MarqueEvent
           header="The Eagle Ark: FUR and Kennel Club Nights Combined!"
-          desc="THE AUSTIN EAGLE - 3RD FRIDAYS - 9:30 PM"
+          desc="THE AUSTIN EAGLE | 3RD FRIDAYS | 9:30 PM | 21+"
           class="justify-around"
         />
         <MarqueEvent
-          header="Full Moon Howl (Summer)"
-          desc="BARTON SPRINGS POOL (Apr-Oct) - FULL MOON NIGHTS - 8 PM "
+          header="Full Moon Howl - Summer Swimming"
+          desc="BARTON SPRINGS POOL (Apr-Oct) | FULL MOON NIGHTS | 8 PM | 18+"
           class="justify-around"
         />
         <MarqueEvent
-          header="Full Moon Howl (Winter)"
-          desc="An Austin Park (Nov-Mar) - FULL MOON NIGHTS - 8 PM"
+          header="Full Moon Howl - Winter Hikes"
+          desc="An Austin Park (Nov-Mar) | FULL MOON NIGHTS | 8 PM | 18+"
           class="justify-around"
         />
         <MarqueEvent
-          header="Educational Workshops/Moshes"
-          desc="HELD EVERY QUARTER"
+          header="Educational Workshops"
+          desc="HELD EVERY QUARTER | 18+"
           class="justify-around"
         />
         <p class="mt-2 font-sans font-semibold">
@@ -162,11 +200,11 @@ const canonicalHost = new URL(Astro.request.url).host;
             <div class="flex flex-1 flex-col text-center text-5xl sm:max-w-[60vw]">
               <img
                 src={image.src}
-                alt={`Board Member ${name}`}
+                alt={`Board Member - ${name}`}
                 loading="lazy"
                 width="300"
                 height="300"
-                class="rounded-full border-8 border-yellow-400"
+                class="rounded-full border-8 border-yellow-200"
               />
               <div class="mt-10 font-serif">{name as string} </div>
             </div>
@@ -180,6 +218,14 @@ const canonicalHost = new URL(Astro.request.url).host;
         {
           officers.map((officer) => (
             <p>
+              <img
+                src={image.src}
+                alt={`Officer - ${name}`}
+                loading="lazy"
+                width="300"
+                height="300"
+              />
+              <br />
               {officer.title} <span class="text-yellow-400">-</span>{" "}
               {officer.name}
               <br />
