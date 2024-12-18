@@ -17,6 +17,11 @@ declare module "astro:content" {
   }
 }
 
+declare module "*.png" {
+  const value: { src: string };
+  export default value;
+}
+
 declare module "astro:content" {
   type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
 
