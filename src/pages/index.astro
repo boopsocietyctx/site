@@ -195,7 +195,7 @@ const canonicalHost = new URL(Astro.request.url).host;
       <p align="center">
         {
           board.map(({ name, image }) => (
-            <div class="flex flex-1 flex-col items-center text-center text-5xl sm:max-w-[60vw]">
+            <div class="mt-20 flex flex-auto flex-col items-center gap-10 flex-wrap md:mb-20 md:flex-row md:gap-5">
               <img
                 src={image.src}
                 alt={`Board Member - ${name}`}
