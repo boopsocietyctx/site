@@ -227,7 +227,7 @@ const canonicalHost = new URL(Astro.request.url).host;
       <div class="grid gap-x-4 gap-y-10 text-center font-serif text-4xl md:grid-cols-2">
         {
           officers.map((officer) => (
-            <p align="center">
+            <div align="center">
               <img
                 src={officer.image.src}
                 alt={`Officer - ${officer.name}`}
@@ -235,14 +235,12 @@ const canonicalHost = new URL(Astro.request.url).host;
                 width="150"
                 height="150"
               />
-              <br />
               <p class="underline">{officer.title}</p>
-              {officer.name}{" "}{officer.pronouns}
-              <br />
+              <p class="text-3xl">{officer.pronouns}</p>
               <a class="text-lg underline" href={`mailto:${officer.email}`}>
                 {officer.email}
               </a>
-            </p>
+            </div>
           ))
         }
       </div>
