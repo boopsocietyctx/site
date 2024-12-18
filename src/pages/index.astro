@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import MarqueEvent from "../components/MarqueEvent.astro";
 
-import clay2024 from "../images/board/2024/clay.jpg";
-import marchosias2024 from "../images/board/2024/marchosias.jpg";
-import sharp2024 from "../images/board/2024/sharp.jpg";
+import clay2024 from "../images/board/2024/clay.png";
+import marchosias2024 from "../images/board/2024/marchosias.png";
+import sharp2024 from "../images/board/2024/sharp.png";
 import boopHero from "../images/boop-hero.png";
 import bs from "../images/icons/ico-bs.png";
 import fb from "../images/icons/ico-fb.png";
@@ -203,7 +203,7 @@ const canonicalHost = new URL(Astro.request.url).host;
                 loading="lazy"
                 width="150"
                 height="150"
-                class="rounded-full border-8 border-yellow-200"
+                align="center"
               />
               <div class="mt-10 font-serif">{name as string} </div>
             </div>
@@ -223,6 +223,7 @@ const canonicalHost = new URL(Astro.request.url).host;
                 loading="lazy"
                 width="150"
                 height="150"
+                align="center"
               />
               <br />
               {officer.title} <span class="text-yellow-400">-</span>{" "}
