@@ -1,18 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MarqueEvent from "../components/MarqueEvent.astro";
-import boopHero from "../images/boop-hero.png";
 
 import clay2024 from "../images/board/2024/clay.jpg";
 import marchosias2024 from "../images/board/2024/marchosias.jpg";
 import sharp2024 from "../images/board/2024/sharp.jpg";
-import dono2025 from "../images/officers/2025/dono.png";
-import champ2025 from "../images/officers/2025/champ.png";
-import neil2025 from "../images/officers/2025/neil.png";
-import ace2025 from "../images/officers/2025/ace.png";
-import tigerdill2025 from "../images/officers/2025/tigerdill.png";
-import kie2025 from "../images/officers/2025/kie.png";
-import polygon2025 from "../images/officers/2025/polygon.png";
+import boopHero from "../images/boop-hero.png";
 
 import bs from "../images/icons/ico-bs.png";
 import fb from "../images/icons/ico-fb.png";
@@ -21,6 +14,14 @@ import ig from "../images/icons/ico-ig.png";
 import mail from "../images/icons/ico-mail.png";
 import tg from "../images/icons/ico-tg.png";
 import tw from "../images/icons/ico-tw.png";
+
+import dono2025 from "../images/officers/2025/dono.png";
+import champ2025 from "../images/officers/2025/champ.png";
+import neil2025 from "../images/officers/2025/neil.png";
+import ace2025 from "../images/officers/2025/ace.png";
+import tigerdill2025 from "../images/officers/2025/tigerdill.png";
+import kie2025 from "../images/officers/2025/kie.png";
+import polygon2025 from "../images/officers/2025/polygon.png";
 
 const board = [
   {
@@ -220,7 +221,7 @@ const canonicalHost = new URL(Astro.request.url).host;
             <p>
               <img
                 src={image.src}
-                alt={`Officer - ${name}`}
+                alt={`Officer - ${officer.name}`}
                 loading="lazy"
                 width="300"
                 height="300"
