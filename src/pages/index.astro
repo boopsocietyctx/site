@@ -205,10 +205,10 @@ const canonicalHost = new URL(Astro.request.url).host;
         </p>
       </div>
       <h2 id="board" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
-      <div class="items-center text-center font-serif text-4xl mt-20 grid grid-cols-2 md:grid-cols-4 gap-10 md:mb-20">
+      <div class="items-center justify-items-center text-center font-serif text-4xl mt-20 grid grid-cols-2 md:grid-cols-4 gap-10 md:mb-20">
         {
           board.map(({ name, image, pronouns }) => (
-             <p>
+             <div>
               <img
                 src={image.src}
                 alt={`Board Member - ${name}`}
@@ -216,10 +216,9 @@ const canonicalHost = new URL(Astro.request.url).host;
                 width="200"
                 height="200"
               />
-              <br />
-              {name as string} <br>
-              {pronouns}
-            </p>
+              <p>{name as string}</p>
+              <p class="text-3xl">{pronouns}</p>
+            </div>
           ))
         }
       </div>
