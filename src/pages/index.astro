@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MarqueEvent from "../components/MarqueEvent.astro";
-import clay2024 from "../images/board/2024/clay.png";
 import marchosias2024 from "../images/board/2024/marchosias.png";
 import sharp2024 from "../images/board/2024/sharp.png";
 import boopHero from "../images/boop-hero.png";
@@ -39,11 +38,6 @@ const board = [
   {
     name: "Sharp",
     image: sharp2024,
-    pronouns: "[He/Him]",
-  },
-  {
-    name: "Clay",
-    image: clay2024,
     pronouns: "[He/Him]",
   },
   {
@@ -159,7 +153,7 @@ const canonicalHost = new URL(Astro.request.url).host;
       <div class="flex flex-col gap-10 px-4">
         <MarqueEvent
           header="Critter Mosh at The Eagle"
-          desc="THE AUSTIN EAGLE | 1st MONDAYS | 7:30 PM | 21+"
+          desc="THE AUSTIN EAGLE | 1st MONDAYS | 7:30 PM | 18+"
           class="justify-around"
         />
         <MarqueEvent
