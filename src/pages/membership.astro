@@ -1,3 +1,105 @@
----
-return Astro.redirect("https://apply.boopsocietyctx.org");
----
+import Layout from "../layouts/Layout.astro";
+import service from "../images/bctxservicearea.png";
+
+<Layout>
+  <main class="container max-w-container">
+    <div
+      id="main"
+      class="mb-60 flex h-[calc(100vh-8rem)] w-full flex-col items-center justify-center gap-[5vw] px-[5vw] md:h-[calc(100vh-3rem)] md:flex-row md:justify-end"
+    >
+      <div class="basis-[min-content]">
+        <h1 class="text-center text-6xl font-bold md:text-justify">
+          Boop Membership
+        </h1>
+      </div>
+    </div>
+    <div class="container max-w-long-prose">
+      <p class="text-center font-sans text-xl">
+        Seeking to join our society of snoots to boop in central Texas? Review 
+        the guidelines below for how we approve applications for membership for 
+        our organization. Along with that, whether you are seeking to be a member 
+        or are a continuing member, review our Rules for Membership as they 
+        affect eligibility as well.
+
+        Remember that our open enrollment for membership runs from October to
+        the end of December every year!
+      </p>
+    </div>
+    <div class="container max-w-long-prose">
+      <h2 id="about" class="scroll-mt-20">$25 Nonrefundable Annual Membership Fee</h2>
+      <p class="text-center font-sans text-xl">
+        Your membership benefits will include a enamel pin and card for the year you 
+        are an active member, receipt of minutes from board meetings to review and 
+        give feedback on, first notice for volunteering opportunities with us, 
+        discounts to certain events such as A Formal [Fetish] Affair, the Austin 
+        Rubber Roundup, and other large events we sponsor or host and the 
+        establishments of Sir Rat Leather and Gear and the Knead it Now Kitchen (KINK). 
+        These membership dues are given as donations to the organization in support 
+        of it. The dues will not be refunded in cases of termination of membership 
+        or otherwise, and we hope this will encourage involvement from those that 
+        choose to become members.
+      </p>
+    </div>
+    <div class="container max-w-long-prose">
+      <h2 id="about" class="scroll-mt-20">Quarterly Attendance Requirement</h2>
+      <p class="text-center font-sans text-xl">
+        Make your intention known, and come out to our events at least 3 times a quarter. 
+        If you’d like to be 
+        more active, come out to more of our events. Talk to at least one officer as 
+        listed on the following link https://www.boopsocietyctx.org/#officers during those 
+        outings and let them know you’re wanting to become a member.
+      </p>
+    </div>
+    <div class="container max-w-long-prose">
+      <h2 id="about" class="scroll-mt-20">Quarterly Volunteering Requirement</h2>
+      <p class="text-center font-sans text-xl">
+        We hope that you’re willing to help us out when we host events. We can always 
+        use a helping hand and would love to be able to rely on you to make future 
+        events happen. Come early or stay late to an event to help us set up or tear down!
+      </p>
+    </div>
+    <div class="container max-w-long-prose">
+      <h2 id="about" class="scroll-mt-20">Follow Membership Rules</h2>
+      <p class="text-center font-sans text-xl">
+        Please read through the file linked here at
+        <a href="https://docs.google.com/document/d/1V8NVGErOp5k-_rEvV11zaNgNxfCZzSf1n4Pd1Vd01P8/view">
+        Rules of Membership 
+        </a>
+        If you want to be a future member or continue your membership, you should 
+        follow these rules at all of our events. Any reports or observed behavior that 
+        goes against our Rules of Membership does affect your eligibility for current and 
+        future membership.
+      </p>
+    </div>
+    <div class="container max-w-long-prose">
+      <h2 id="about" class="scroll-mt-20">Live in Central Texas</h2>
+      <p class="text-center font-sans text-xl">
+        We serve the central Texas area. That means that to have the most effective 
+        membership for the year, it is best that our members will be those that can assist 
+        us in the counties of Bastrop, Bell, Blanco, Burnet, Coryell, Gillespie, Hays, 
+        Lampasas, Lee, Llano, Falls, McLennan, Milam, Travis, and Williamson. There are 
+        some extended counties that are geographically close, so if you’re a resident of a 
+        location within 50 miles south and west of Austin and 50 miles north and east of Waco, 
+        you’re more than likely in the service area.
+          <img
+            width="200"
+            height="200"
+            src={service.src}
+            alt="Boop Society Twitter Page"
+          />
+      </p>
+    </div>
+    <div class="container max-w-long-prose">
+      <h2 id="about" class="scroll-mt-20">Are you ready to Apply?</h2>
+      <p class="text-center font-sans text-xl">
+        Open enrollment is open from October 1 to December 31 every year. At that point the
+        <a href="https://apply.boopsocietyctx.org/">
+        Application Page 
+        </a>
+        will be available for you to submit your application. Always remember to talk to our officers
+        and Members at Large continuously through this application process and as a member, as we look
+        forward to fostering community, leadership, and service.
+      </p>
+    </div>
+  </main>
+</Layout>
