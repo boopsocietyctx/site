@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MarqueEvent from "../components/MarqueEvent.astro";
-import marchosias2024 from "../images/board/2024/marchosias.png";
-import sharp2024 from "../images/board/2024/sharp.png";
 import boopHero from "../images/boop-hero.png";
 import bs from "../images/icons/ico-bs.png";
 import fb from "../images/icons/ico-fb.png";
@@ -11,96 +9,86 @@ import ig from "../images/icons/ico-ig.png";
 import mail from "../images/icons/ico-mail.png";
 import tg from "../images/icons/ico-tg.png";
 import tw from "../images/icons/ico-tw.png";
-import ace2025 from "../images/officers/2025/ace.png";
-import champ2025 from "../images/officers/2025/champ.png";
-import dono2025 from "../images/officers/2025/dono.png";
-import gruff2025 from "../images/officers/2025/gruff.png";
-import kie2025 from "../images/officers/2025/kie.png";
-import neil2025 from "../images/officers/2025/neil.png";
-import polygon2025 from "../images/officers/2025/polygon.png";
-
+import ace2026 from "../images/officers/2026/ace.png";
+import marchosias2026 from "../images/officers/2026/marchosias.png";
+import dono2026 from "../images/officers/2026/dono.png";
+import gruff2026 from "../images/officers/2026/gruff.png";
+import polygon2026 from "../images/officers/2026/polygon.png";
+import kie2025 from "../images/board/2024/kie.jpg";
+import ovi2026 from "../images/officers/2026/ovi.png";
+import colin2026 from "../images/officers/2026/colin.png";
 
 const board = [
   {
+    name: "Ace",
+    image: ace2026,
+    pronouns: "[He/Him]",
+  },
+  {
     name: "Marchosias",
-    image: marchosias2024,
+    image: marchosias2026,
     pronouns: "[He/Him]",
   },
   {
     name: "Polygon",
-    image: polygon2025,
+    image: polygon2026,
     pronouns: "[He/Him]",
   },
   {
     name: "Kie",
     image: kie2025,
-    pronouns: "[He/Him]",
-  },
-  {
-    name: "Sharp",
-    image: sharp2024,
-    pronouns: "[He/Him]",
-  },
-  {
-    name: "Champ",
-    image: champ2025,
-    pronouns: "[He/Him]",
-  },
-  {
-    name: "Neil",
-    image: neil2025,
     pronouns: "[He/Him]",
   },
 ];
 
 const officers = [
   {
-    image: kie2025,
+    image: ace2026,
     title: "President",
-    name: "Kie",
-    email: "kie@boopsocietyctx.org",
+    name: "Ace",
+    email: "ace@boopsocietyctx.org",
     pronouns: "[He/Him]",
   },
-  { image: champ2025,
+  { image: marchosias2026,
     title: "Vice President",
-    name: "Champ the Fox",
-    email: "champ@boopsocietyctx.org",
+    name: "Marchosias",
+    email: "marchosias@boopsocietyctx.org",
     pronouns: "[He/Him]",
   },
-  { image: neil2025,
-    title: "Secretary (Interim)",
-    name: "Neil",
-    email: "neil@boopsocietyctx.org",
+  { image: ovi2026,
+    title: "Secretary",
+    name: "Ovi",
+    email: "ovi@boopsocietyctx.org",
     pronouns: "[He/Him]",
   },
-  { image: polygon2025,
+  { image: polygon2026,
     title: "Treasurer",
     name: "Polygon",
     email: "polygon@boopsocietyctx.org",
     pronouns: "[He/Him]",
     },
   {
-    image: ace2025,
-    title: "Event Coordinator (Interim)",
+    image: ace2026,
+    title: "Event Coordinator",
     name: "Ace",
     email: "ace@boopsocietyctx.org",
     pronouns: "[Any]",
   },
   {
-    image: gruff2025,
-    title: "Membership Coordinator (Interim)",
+    image: gruff2026,
+    title: "Membership Coordinator",
     name: "Pup Gruff",
     email: "volunteer@boopsocietyctx.org",
     pronouns: "[He/Him]",
   },
   {
-    image: dono2025,
-    title: "Inventory Manager (Interim)",
-    name: "Dono",
+    image: colin2026,
+    title: "Inventory Manager",
+    name: "Colin",
     email: "equipment@boopsocietyctx.org",
-    pronouns: "[He/Him]",
+    pronouns: "[She/Her]",
   },
-  { image: dono2025,
+  { image: dono2026,
     title: "Webmaster",
     name: "Dono",
     email: "webmaster@boopsocietyctx.org",
@@ -200,7 +188,7 @@ const canonicalHost = new URL(Astro.request.url).host;
         </p>
       </div>
       <h2 id="board" class="mb-12 mt-40 scroll-mt-20">Board of Directors</h2>
-      <div class="items-center justify-items-center text-center font-serif text-4xl mt-20 grid grid-cols-2 md:grid-cols-3 gap-10 md:mb-20">
+      <div class="items-center justify-items-center text-center font-serif text-4xl mt-20 grid grid-cols-2 gap-10 md:mb-20">
         {
           board.map(({ name, image, pronouns }) => (
              <div>
@@ -254,9 +242,7 @@ const canonicalHost = new URL(Astro.request.url).host;
         Ste 370-1198 <br />
         Austin, TX 78727
       </p>
-      <div
-        class="mx-[2vw] mb-60 mt-20 flex flex-row flex-wrap items-center justify-center gap-4"
-      >
+      <div class="mx-[2vw] mb-60 mt-20 flex flex-row flex-wrap items-center justify-center gap-4">
         <a href="mailto:boop@boopsocietyctx.org">
           <img
             width="40"
